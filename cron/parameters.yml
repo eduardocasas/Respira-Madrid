@@ -1,0 +1,9 @@
+database:
+    name: respiramadrid
+    server: localhost
+    user: root
+    password: ""
+        
+data:
+    folder: /home/eduardo/MyApps/RespiraMadrid/cron/data
+    url: http://www.mambiente.munimadrid.es/opendata/horario.txt

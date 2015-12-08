@@ -1,0 +1,9 @@
+database:
+    name: ~
+    server: ~
+    user: ~
+    password: ~
+        
+data:
+    folder: ~
+    url: ~
