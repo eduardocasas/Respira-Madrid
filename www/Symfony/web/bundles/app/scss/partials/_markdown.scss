@@ -1,0 +1,307 @@
+@import "partials/_parameters.scss";
+
+@mixin markdown_preview($target) {
+
+    #{$target} {
+        color: $default_text_color;
+        padding-top:10px;
+        padding-bottom:10px;
+        font-family: Helvetica,arial,freesans,clean,sans-serif;
+        font-size:13px;
+        line-height:1.6;
+    }
+    #{$target}>*:first-child {
+        margin-top:0!important;
+    }
+    #{$target}>*:last-child {
+        margin-bottom:0!important;
+    }
+    #{$target} a {
+        color:#4183C4;
+        text-decoration:none;
+    }
+    #{$target} a:hover {
+        text-decoration:underline;
+    }
+    #{$target} h1,
+    #{$target} h2,
+    #{$target} h3,
+    #{$target} h4,
+    #{$target} h5,
+    #{$target} h6 {
+        margin:20px 0 10px;
+        padding:0;
+        font-weight:bold;
+        -webkit-font-smoothing:antialiased;
+    }
+    #{$target} h1 tt,
+    #{$target} h1 code,
+    #{$target} h2 tt,
+    #{$target} h2 code,
+    #{$target} h3 tt,
+    #{$target} h3 code,
+    #{$target} h4 tt,
+    #{$target} h4 code,
+    #{$target} h5 tt,
+    #{$target} h5 code,
+    #{$target} h6 tt,
+    #{$target} h6 code {
+        font-size:inherit;
+    }
+    #{$target} h1 {
+        color: $highlight_text_color;
+        font-size:1.2em;
+    }
+    #{$target} h2 {
+        border-bottom:1px solid #ccc;
+        color: $highlight_text_color;
+        font-size:1.1em;
+    }
+    #{$target} h3 {
+        color: $highlight_text_color;
+        font-size:1em;
+    }
+    #{$target} h4 {
+        color: $highlight_text_color;
+        font-size:1em;
+    }
+    #{$target} h5 {
+        color: $highlight_text_color;
+        font-size:1em;
+    }
+    #{$target} h6 {
+        color: $highlight_text_color;
+        font-size:1em;
+    }
+    #{$target} p,
+    #{$target} blockquote,
+    #{$target} ul,
+    #{$target} ol,
+    #{$target} dl,
+    #{$target} li,
+    #{$target} table,
+    #{$target} pre {
+        margin:15px 0;
+    }
+    #{$target} hr {
+        background:transparent url('../../images/modules/pulls/dirty-shade.png') repeat-x 0 0;
+        border:0 none;
+        color:#ccc;
+        height:4px;
+        padding:0;
+    }
+    #{$target}>h2:first-child,
+    #{$target}>h1:first-child,
+    #{$target}>h1:first-child+h2,
+    #{$target}>h3:first-child,
+    #{$target}>h4:first-child,
+    #{$target}>h5:first-child,
+    #{$target}>h6:first-child {
+        margin-top:0;
+        padding-top:0;
+    }
+    #{$target} h1+p,
+    #{$target} h2+p,
+    #{$target} h3+p,
+    #{$target} h4+p,
+    #{$target} h5+p,
+    #{$target} h6+p {
+        margin-top:0;
+    }
+    #{$target} li p.first {
+        display:inline-block;
+    }
+    #{$target} ul,
+    #{$target} ol {
+        padding-left:30px;
+    }
+    #{$target} ul li>:first-child,
+    #{$target} ol li>:first-child {
+        margin-top:0;
+    }
+    #{$target} ul li>:last-child,
+    #{$target} ol li>:last-child {
+        margin-bottom:0;
+    }
+    #{$target} dl {
+        padding:0;
+    }
+    #{$target} dl dt {
+        font-size:14px;
+        font-weight:bold;
+        font-style:italic;
+        padding:0;
+        margin:15px 0 5px;
+    }
+    #{$target} dl dt:first-child {
+        padding:0;
+    }
+    #{$target} dl dt>:first-child {
+        margin-top:0;
+    }
+    #{$target} dl dt>:last-child {
+        margin-bottom:0;
+    }
+    #{$target} dl dd {
+        margin:0 0 15px;
+        padding:0 15px;
+    }
+    #{$target} dl dd>:first-child {
+        margin-top:0;
+    }
+    #{$target} dl dd>:last-child {
+        margin-bottom:0;
+    }
+    #{$target} blockquote {
+        border-left:4px solid #DDD;
+        padding:0 15px;
+        color:#777;
+    }
+    #{$target} blockquote>:first-child {
+        margin-top:0;
+    }
+    #{$target} blockquote>:last-child {
+        margin-bottom:0;
+    }
+    #{$target} table {
+        padding:0;
+        border-collapse: collapse;
+        border-spacing: 0;
+        font-size: 100%;
+        font: inherit;
+    }
+    #{$target} table tr {
+        border-top:1px solid #ccc;
+        background-color:#fff;
+        margin:0;
+        padding:0;
+    }
+    #{$target} table tr:nth-child(2n) {
+        background-color:#f8f8f8;
+    }
+    #{$target} table tr th {
+        font-weight:bold;
+    }
+    #{$target} table tr th,
+    #{$target} table tr td {
+        border:1px solid #ccc;
+        margin:0;
+        padding:6px 13px;
+    }
+    #{$target} table tr th>:first-child,
+    #{$target} table tr td>:first-child {
+        margin-top:0;
+    }
+    #{$target} table tr th>:last-child,
+    #{$target} table tr td>:last-child {
+        margin-bottom:0;
+    }
+    #{$target} img {
+        max-width:100%;
+    }
+    #{$target} span.frame {
+        display:block;
+        overflow:hidden;
+    }
+    #{$target} span.frame>span {
+        border:1px solid #ddd;
+        display:block;
+        float:left;
+        overflow:hidden;
+        margin:13px 0 0;
+        padding:7px;
+        width:auto;
+    }
+    #{$target} span.frame span img {
+        display:block;
+        float:left;
+    }
+    #{$target} span.frame span span {
+        clear:both;
+        color:#333;
+        display:block;
+        padding:5px 0 0;
+    }
+    #{$target} span.align-center {
+        display:block;
+        overflow:hidden;
+        clear:both;
+    }
+    #{$target} span.align-center>span {
+        display:block;
+        overflow:hidden;
+        margin:13px auto 0;
+        text-align:center;
+    }
+    #{$target} span.align-center span img {
+        margin:0 auto;
+        text-align:center;
+    }
+    #{$target} span.align-right {
+        display:block;
+        overflow:hidden;
+        clear:both;
+    }
+    #{$target} span.align-right>span {
+        display:block;
+        overflow:hidden;
+        margin:13px 0 0;
+        text-align:right;
+    }
+    #{$target} span.align-right span img {
+        margin:0;
+        text-align:right;
+    }
+    #{$target} span.float-left {
+        display:block;
+        margin-right:13px;
+        overflow:hidden;
+        float:left;
+    }
+    #{$target} span.float-left span {
+        margin:13px 0 0;
+    }
+    #{$target} span.float-right {
+        display:block;
+        margin-left:13px;
+        overflow:hidden;
+        float:right;
+    }
+    #{$target} span.float-right>span {
+        display:block;
+        overflow:hidden;
+        margin:13px auto 0;
+        text-align:right;
+    }
+    #{$target} code,
+    #{$target} tt {
+        margin:0 2px;
+        padding:0 5px;
+        white-space:nowrap;
+        border:1px solid #eaeaea;
+        background-color:#f8f8f8;
+        border-radius:3px;
+    }
+    #{$target} pre>code {
+        margin:0;
+        padding:0;
+        white-space:pre;
+        border:none;
+        background:transparent;
+    }
+    #{$target} .highlight pre,
+    #{$target} pre {
+        background-color:#f8f8f8;
+        border:1px solid #ccc;
+        font-size:13px;
+        line-height:19px;
+        overflow:auto;
+        padding:6px 10px;
+        border-radius:3px;
+    }
+    #{$target} pre code,
+    #{$target} pre tt {
+        background-color:transparent;
+        border:none;
+    }
+}

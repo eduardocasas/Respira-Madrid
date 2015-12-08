@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'contact.accomplished.title'|trans }}{% endblock %}
+{% block description %}{{ 'contact.accomplished.description'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/contact/info.css') }}">
+{% endblock %}
+{% block js %}
+<link rel="stylesheet" href="{{ asset('bundles/app/js/contact/index.js') }}">
+{% endblock %}
+{% block main %}
+    <h1 class="title_1">{{ 'contact.accomplished.title'|trans }}</h1>
+    <p>{{ 'contact.accomplished.text_1'|trans }}</p>
+    <p>{{ 'contact.accomplished.text_2'|trans }}</p>
+    <p>{{ 'contact.accomplished.text_3'|trans }}</p>
+{% endblock %}

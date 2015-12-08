@@ -1,0 +1,63 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{% if siteTitle %}{{ siteTitle }}{% else %}Respira Madrid{% endif %}
+{% endblock %}
+{% block description %}{{ 'home.description'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ absolute_url(asset('bundles/vendor/bower_components/eduardocasas-chosen/src/min/chosen.css')) }}">
+<link rel="stylesheet" href="{{ absolute_url(asset('bundles/vendor/bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css')) }}">
+<link rel="stylesheet" href="{{ absolute_url(asset('bundles/vendor/bower_components/chartist/dist/chartist.min.css')) }}">
+<link rel="stylesheet" href="{{ absolute_url(asset('bundles/app/css/home/index.css')) }}">
+{% if printFile is defined %}
+    <link rel="stylesheet" href="{{ absolute_url(asset('bundles/app/css/home/print.css')) }}">    
+{% endif %}
+{% endblock %}
+{% block js %}
+<script src="{{ absolute_url(asset('bundles/vendor/bower_components/eduardocasas-chosen/src/min/chosen.jquery.js')) }}" type="text/javascript"></script>
+<script src="{{ absolute_url(asset('bundles/vendor/bower_components/jquery-ui/ui/minified/datepicker.min.js')) }}" type="text/javascript"></script>
+<script src="{{ absolute_url(asset('bundles/vendor/bower_components/chartist/dist/chartist.min.js')) }}" type="text/javascript"></script>
+<script src="{{ absolute_url(asset('bundles/app/js/home/index.js')) }}" type="text/javascript"></script>
+{% endblock %}
+{% block sidebar %}
+<aside id="sidebar">
+    <form id="filter_form" method="get" action="{{ url('home_get_records') }}">
+        <button id="reset_filter" title="{{ 'filter_form.reset'|trans }}"></button>
+        <fieldset>
+            <h2>{{ 'filter_form.period'|trans }}</h2>
+            <input type="checkbox" id="last_24_hours" name="last_24_hours" {% if selectedlast24Hours %}checked{% endif %}>
+            <label for="last_24_hours">{{ 'filter_form.last_24_hour'|trans }}</label>
+            <span class="wrapper" id="period_wrapper">
+                <input type="text" name="start_date" id="date_1" class="datepicker" placeholder="{{ 'filter_form.date_1'|trans }}" value="{% if not selectedlast24Hours %}{{ startDate|date('d-m-Y') }}{% endif %}"> <span>/</span>
+                <input type="text" name="end_date" id="date_2" class="datepicker" placeholder="{{ 'filter_form.date_2'|trans }}" value="{% if not selectedlast24Hours %}{{ endDate|date('d-m-Y') }}{% endif %}">
+            </span>
+        </fieldset>
+        <fieldset>
+            <h2><label for="station_filter">{{ 'filter_form.station'|trans }}</label></h2>
+            <select name="station" id="station">
+                <option value="{{ stationCollection[25].id }}">{{ stationCollection[25].name }}</option>
+            {% for station in stationCollection[0:24] %}
+                <option value="{{ station.id }}" {% if station.id == selectedStation %}selected{% endif %}>{{ station.name }}</option>
+            {% endfor %}
+            </select>
+        </fieldset>
+        <fieldset id="item_fieldset">
+            <h2>{{ 'filter_form.item'|trans }}</h2>
+        {% for item in itemCollection[0:6] %}
+            <span class="wrapper">
+                <input type="checkbox" value="{{ item.id }}" name="item[]" id="item_{{ item.id }}" {% if item.id in selectedItemCollection %}checked{% endif %}>
+                <label for="item_{{ item.id }}">{{ item.name }} ({{ item.formula }})</label>
+            </span>
+        {% endfor %}
+        </fieldset>
+        <input type="submit" id="submit_filter_button" value="{{ 'action.filter'|trans }}" class="default_button">
+    </form>
+    <img src="{{ asset('bundles/app/img/logo.png') }}" width="200px" id="logo">
+</aside>
+{% endblock %}
+{% block main %}
+<button class="default_button" id="print_button">{{ 'action.print'|trans }}</button>
+<section id="records_wrapper">
+{% include 'home/records.html.twig' with { records: records, recordsForTable: recordsForTable, siteTitle: '' } %}
+</section>
+{% endblock %}

@@ -1,0 +1,14 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'error.404.title'|trans }}{% endblock %}
+{% block description %}{{ 'error.404.description'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ absolute_url(asset('bundles/app/css/error.css')) }}">
+{% endblock %}
+{% block main %}
+<section id="error_wrapper">
+    <img src="{{ asset('bundles/app/img/logo.png') }}" width="300px" height="378px">
+    <h1 id="error_number">404</h1>
+    <h1 id="error_text">{{ 'error.404.title'|trans }}</h1>
+</section>
+{% endblock %}

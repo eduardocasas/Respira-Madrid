@@ -1,0 +1,347 @@
+@import 'partials/_parameters';
+@import 'partials/_resources';
+
+#main_wrapper {
+    box-sizing: border-box;
+    padding: 0 20px;
+    width: 100%;
+}
+#wrapper {
+    margin-left: $sidebar_width;
+}
+#title {
+    font-size: 1.6em;
+    margin-left: 10px;
+}
+#date_interval_wrapper {
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+#print_button {
+    float: right;
+    margin: 8px;
+}
+#no_records {
+    margin-top: 50px;
+    text-align: center;
+}
+
+/* --------- Sidebar --------- */
+
+#reset_filter {
+    left: $sidebar_width - 20px;
+    position:absolute;
+    &:after {
+        content: "x";
+    }
+    &:hover {
+        color: #000;
+    }
+}
+#filter_form {
+    box-sizing: border-box;
+    padding: 0 10px;
+    position: relative;
+    z-index: $sidebar_form_index;
+    h2 {
+        font-size: 1.1em;
+        margin: 10px 0 10px -10px;
+    }
+    fieldset {
+        clear: both;
+        display: block;
+        margin: 10px 0 10px 20px;
+    }
+    input[type=checkbox] {
+        margin: 0 5px 5px 0;
+        vertical-align: top;
+    }
+    .wrapper {
+        display: block;
+    }
+    .datepicker {
+        display: inline-block;
+        text-align: center;
+        width: 90px;
+    }
+}
+#station_chosen {
+    width: auto !important;
+}
+#period_wrapper {
+    margin-top: 10px;
+    span {
+        color: #aaa;
+    }
+}
+#submit_filter_button {
+    margin: 15px auto 0;
+}
+
+/* --------- Tables --------- */
+
+#records_table {
+    th {
+        text-align: center;
+    }
+}
+
+/* --------- Charts --------- */
+
+#chart {
+    clear: both;
+    height: 500px;
+    span.ct-horizontal {
+        height: 0 !important;
+        margin: 20px 0 50px -30px !important;
+        -webkit-transform: rotate(-40deg);
+        -moz-transform: rotate(-40deg);
+        -ms-transform: rotate(-40deg);
+        -o-transform: rotate(-40deg);
+        transform: rotate(-40deg);
+        -webkit-transform-origin: 380% 2%;
+        width: 10px !important;
+
+    }
+    .vertical-line {
+        stroke: #000;
+        stroke-width: 1px;
+    }
+}
+@media (max-width: 1100px) {
+    #chart {
+        .point_size_6,
+        .point_size_5,
+        .point_size_4 {
+            stroke-width: 0px;
+        }
+        .point_size_3 {
+            stroke-width: 5px;
+        }
+        .point_size_2 {
+            stroke-width: 6px;
+        }
+        .point_size_1 {
+            stroke-width: 8px;
+        }
+        .point_size_0 {
+            stroke-width: 10px;
+        }
+        .line_size_6,
+        .line_size_5,
+        .line_size_4,
+        .line_size_3 {
+            stroke-width: 1px;
+        }
+        .line_size_2 {
+            stroke-width: 2px;
+        }
+        .line_size_1,
+        .line_size_0 {
+            stroke-width: 3px;
+        }
+    }
+}
+@media (min-width: 1100px) {
+    #chart {
+        .point_size_6,
+        .point_size_5 {
+            stroke-width: 0px;
+        }
+        .point_size_4,
+        .point_size_3 {
+            stroke-width: 5px;
+        }
+        .point_size_2 {
+            stroke-width: 6px;
+        }
+        .point_size_1 {
+            stroke-width: 8px;
+        }
+        .point_size_0 {
+            stroke-width: 10px;
+        }
+        .line_size_6,
+        .line_size_5 {
+            stroke-width: 1px;
+        }
+        .line_size_4,
+        .line_size_3 {
+            stroke-width: 2px;
+        }
+        .line_size_2 {
+            stroke-width: 2px;
+        }
+        .line_size_1,
+        .line_size_0 {
+            stroke-width: 3px;
+        }
+    }
+}
+@media (min-width: 1300px) {
+    #chart {
+        .point_size_6 {
+            stroke-width: 0px;
+        }
+        .point_size_5,
+        .point_size_4 {
+            stroke-width: 4px;
+        }
+        .point_size_3 {
+            stroke-width: 6px;
+        }
+        .point_size_2,
+        .point_size_1 {
+            stroke-width: 8px;
+        }
+        .point_size_0 {
+            stroke-width: 10px;
+        }
+        .line_size_6,
+        .line_size_5 {
+            stroke-width: 1px;
+        }
+        .line_size_4,
+        .line_size_3 {
+            stroke-width: 2px;
+        }
+        .line_size_2 {
+            stroke-width: 2px;
+        }
+        .line_size_1,
+        .line_size_0 {
+            stroke-width: 3px;
+        }
+    }
+}
+@media (min-width: 1600px) {
+    #chart {
+        .point_size_6 {
+            stroke-width: 0px;
+        }
+        .point_size_5 {
+            stroke-width: 5px;
+        }
+        .point_size_4 {
+            stroke-width: 6px;
+        }
+        .point_size_3,
+        .point_size_2 {
+            stroke-width: 8px;
+        }
+        .point_size_1,
+        .point_size_0 {
+            stroke-width: 10px;
+        }
+        .line_size_6,
+        .line_size_5 {
+            stroke-width: 1px;
+        }
+        .line_size_4,
+        .line_size_3 {
+            stroke-width: 2px;
+        }
+        .line_size_2,
+        .line_size_1 {
+            stroke-width: 2px;
+        }
+        .line_size_0 {
+            stroke-width: 3px;
+        }
+    }
+}
+@media (min-width: 1900px) {
+    #chart {
+        .point_size_6 {
+            stroke-width: 0px;
+        }
+        .point_size_5 {
+            stroke-width: 5px;
+        }
+        .point_size_4 {
+            stroke-width: 6px;
+        }
+        .point_size_3 {
+            stroke-width: 8px;
+        }
+        .point_size_2,
+        .point_size_1,
+        .point_size_0 {
+            stroke-width: 10px;
+        }
+        .line_size_6,
+        .line_size_5,
+        .line_size_4 {
+            stroke-width: 1px;
+        }
+        .line_size_3 {
+            stroke-width: 2px;
+        }
+        .line_size_2,
+        .line_size_1 {
+            stroke-width: 2px;
+        }
+        .line_size_0 {
+            stroke-width: 3px;
+        }
+    }
+}
+#legend {
+    border-collapse: collapse;
+    margin: 10px auto 0;
+    width: auto;
+    caption {
+        font-weight: bold;
+        padding: 10px;
+    }
+    td {
+        border: $main_block_border;
+        padding: 5px;
+    }
+    span {
+        display: block;
+        height: 10px;
+        width: 10px;
+    }
+    .color_1 {
+        background-color: #d70206;
+    }
+    .color_2 {
+        background-color: #f05b4f;
+    }
+    .color_3 {
+        background-color: #f4c63d;
+    }
+    .color_4 {
+        background-color: #d17905;
+    }
+    .color_5 {
+        background-color: #453d3f;
+    }
+    .color_6 {
+        background-color: #59922b;
+    }
+}
+
+/* ---------------- Responsive Design ---------------- */
+
+@media (max-width: $min_width) {
+    #display_sidebar_button {
+        display: inline-block;
+    }
+    #reset_filter {
+        float: right;
+        left: 0;
+        margin: 10px;
+        position: relative;
+    }
+    #filter_form {
+        padding: 0 0 20px 0;
+        fieldset {
+            clear: none;
+        }
+    }
+    #records_table {
+        width: 100%;
+    }
+}

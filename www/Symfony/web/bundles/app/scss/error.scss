@@ -1,0 +1,28 @@
+#error_wrapper {
+    margin-top: 10px;
+    min-height: 385px;
+    overflow: hidden;
+    text-align: center;
+    img {
+        opacity: 0.1;
+        position: absolute;
+        left:0;
+        right:0;
+        margin-left:auto;
+        margin-right:auto;
+    }
+}
+#error_number {
+    font-family: "league-gothic";
+    font-size: 11em;
+    font-weight: normal;
+    margin-top: 100px;
+}
+#error_text{
+    font-family: "league-gothic";
+    font-size: 2em;
+    font-weight: normal;
+}
+#footer {
+    margin-left: 0;
+}

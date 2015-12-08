@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{% if selectedTag is defined %}{{ selectedTag.name }} | {% endif %}{{ 'blog.title'|trans }}{% endblock %}
+{% block description %}{{ 'blog.description'|trans }} {% if selectedTag is defined %} Etiqueta: {{ selectedTag.name }}.{% endif %}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/blog/blog_base.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/app/css/blog/index.css') }}">
+{% endblock %}
+{% block js %}
+<link rel="stylesheet" href="{{ asset('bundles/app/js/blog/index.js') }}">
+{% endblock %}
+{% block sidebar %}
+{% include 'blog/blog_sidebar.html.twig' %}
+{% endblock %}
+{% block main %}
+<a href="{% if selectedTag is defined %}{{ url('blog_tag_rss', { tagSlug: selectedTag.slug }) }}{% else %}{{ url('blog_rss') }}{% endif %}" title="{% if selectedTag is defined %}{{ selectedTag.name }} | {% endif %}Blog RSS" id="rss"></a>
+<h1 class="title_1">{% if selectedTag is defined %} {{ selectedTag.name }} | {% endif %}{{ 'blog.title_1'|trans }}</h1>
+{% for article in articles %}
+<section class="article_wrapper">
+    <h2><a href="{{ url('blog_article', { date: article.date|date('Y-m-d'), slug: article.slug }) }}">{{ article.title }}</a></h2>
+    <time datetime="{{ article.date|date('Y-m-d') }}">{{ article.date|localizeddate('long', 'none', app.request.locale) }}</time>
+    <p>{{ article.summary }}</p>
+</section>
+{% endfor %}
+{% endblock %}

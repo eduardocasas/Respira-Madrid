@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ 'backoffice.security.login.title'|trans }}
+{% endblock %}
+{% block description %}
+Contact description
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/backoffice/security/login.css') }}">
+{% endblock %}
+{% block main %}
+    <h1 class="title_1">{{ 'backoffice.security.login.title'|trans }}</h1>
+    {% if error %}
+        <p id="error_message">{{ error.messageKey|trans(error.messageData, 'security') }}</p>
+    {% endif %}
+    <form action="{{ path('backoffice_login_check') }}" method="post" id="login_form">
+        <fieldset>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="_username" value="{{ last_username }}" autofocus>
+        </fieldset>
+        <fieldset>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="_password">
+        </fieldset>
+
+        {#
+            If you want to control the URL the user
+            is redirected to on success (more details below)
+            <input type="hidden" name="_target_path" value="/account" />
+        #}
+
+        <input type="submit" class="default_button" value="{{ 'action.enter'|trans }}">
+    </form>
+{% endblock %}

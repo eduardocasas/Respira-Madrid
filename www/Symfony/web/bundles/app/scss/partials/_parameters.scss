@@ -1,0 +1,33 @@
+/* ------ z-index ------*/
+
+$disable_background_index: 1;
+$fadein_window_index: $disable_background_index + 1;
+$header_index: $fadein_window_index + 2;
+$sidebar_index: $header_index - 1;
+$display_sidebar_button_index: $sidebar_index + 1; 
+$sidebar_logo_index: $sidebar_index;
+$sidebar_form_index: $sidebar_logo_index + 1;
+
+/* --------- dimmensions --------- */
+
+$header_height: 59px;
+$header_height_small: 50px;
+$sidebar_width: 290px;
+$wrapper_width: 860px;
+$min_width: $sidebar_width+$wrapper_width + 50;
+
+/* --------- colors --------- */
+
+$body_background_color: #fefefe;
+$main_block_background: #f7f7f7;
+$link_color: #777;
+$default_text_color: #505050;
+$input_background_color: #fefefe;
+$input_background_color_disabled: #eee;
+$input_background_color_hover: #fffee3;
+$highlight_text_color: #888;
+$error_text_color: #c23030;
+
+/* --------- borders --------- */
+
+$main_block_border: 1px solid #ddd;

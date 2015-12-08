@@ -1,0 +1,16 @@
+/www/Symfony/web/bundles/
+/www/Symfony/app/bootstrap.php.cache
+/www/Symfony/app/cache/*
+/www/Symfony/app/config/parameters.yml
+/www/Symfony/app/logs/*
+!www/Symfony/app/cache/.gitkeep
+!www/Symfony/app/logs/.gitkeep
+/www/Symfony/app/phpunit.xml
+/www/Symfony/build/
+/www/Symfony/vendor/
+/www/Symfony/bin/
+/www/Symfony/composer.phar
+/node_modules/
+/www/Symfony/web/bundles/vendor/bower_components
+/cron
+/data

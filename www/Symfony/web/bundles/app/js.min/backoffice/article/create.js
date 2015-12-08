@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#submit_button").click(function(e){e.preventDefault(),editor.preview(),$("#article_form_article_extend_html").val($(editor.getElement("previewer").body.innerHTML).html()),$("#article_form").submit()})});

@@ -1,0 +1,14 @@
+parameters:
+    version: 1.0.0
+    database_host: ~
+    database_port: ~
+    database_name: ~
+    database_user: ~
+    database_password: ~
+    mailer_transport: ~
+    mailer_host: ~
+    mailer_user: ~
+    my_email: ~
+    mailer_password: ~
+    secret: ~
+    locale: es

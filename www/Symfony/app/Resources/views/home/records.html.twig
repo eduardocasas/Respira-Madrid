@@ -1,0 +1,79 @@
+<script type="text/javascript">
+    var title = '{{ siteTitle|e('js') }}';
+{% set dateCollection = [] %}
+{% set label = [] %}
+{% for date, recordsByHour in recordsForTable %}
+    {% set dateCollection = dateCollection|merge(["'"~date~"'"]) %}
+{% for hour, recordsByItem in recordsByHour %}
+    {% set label = label|merge(["'"~hour~":00'"]) %}
+{% endfor %}
+{% endfor %}
+    var recordsLength = {{ label|length }};
+    var dateCollection = [{{ dateCollection|join(',')|raw }}];
+    var labels = [{{ label|join(',')|raw }}];
+    var series = [];
+{% for record in records %}
+    {% set series = [] %}
+{% for date in record %}
+{% for hour, data in date %}
+    {% set value = (data.value is not null) ? data.value : 'null' %}
+    {% set series = series|merge([value]) %}
+{% endfor %}        
+{% endfor %}
+    series.push([{{ series|join(',')}}]);
+    {% endfor %}
+</script>
+<h1 class="title_1" id="title">{{ 'home.title'|trans({ location: stationCollection[selectedStation].name }) }}</h1>
+<div class="title_1" id="date_interval_wrapper">
+{% if selectedlast24Hours %}
+    <p>{{ 'filter_form.last_24_hour'|trans }}</p>
+{% else %}
+    <time datetime="{{ startDate|date('Y-m-d') }}">{{ startDate|localizeddate('long', 'none', app.request.locale) }}</time>
+{% if startDate != endDate %}
+    -
+    <time datetime="{{ endDate|date('Y-m-d') }}">{{ endDate|localizeddate('long', 'none', app.request.locale) }}</time>
+{% endif %}
+{% endif %}
+</div>
+{% if records is empty %}
+<p id="no_records">{{ 'home.no_records'|trans }}</p>
+{% else %}
+<div class="ct-chart ct-golden-section" id="chart"></div>
+<table id="legend">
+    <caption>{{ 'home.legend'|trans }}</caption>
+    {% set index = 1%}
+    {% for itemId, recordByDate in records %}
+        <tr>
+            <td><span class="color_{{ index }}"></span></td>
+            <td>{{ itemCollection[itemId].name }} ({{ itemCollection[itemId].formula }}): {{ itemCollection[itemId].unit }}</td>
+        </tr>
+        {% set index = index+1 %}
+    {% endfor %}
+</table>
+<table class="table_1" id="records_table">
+    <thead>
+        <tr>
+            <th class="empty"></th>
+        {% for itemId, recordByDate in records %}
+            <th>{{ itemCollection[itemId].formula }}<br>{{ itemCollection[itemId].unit }}</th>
+        {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+    {% for date, recordsByHour in recordsForTable %}
+        <tr>
+            <th>{{ 'home.hour'|trans }}</th>
+            <th colspan="6">{{ date }}</th>
+        </tr>
+        {% for hour, recordsByItem in recordsByHour %}
+        <tr>
+            <td>{{ hour }}:00</td>
+        {% for itemId, records in recordsByItem %}
+            <td>{{ records.value }}</td>
+        {% endfor %}
+        </tr>
+        {% endfor %}
+    {% endfor %}
+    </tbody>
+</table>
+{% endif %}

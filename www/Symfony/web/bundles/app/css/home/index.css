@@ -1,0 +1,258 @@
+/* ------ z-index ------*/
+/* --------- dimmensions --------- */
+/* --------- colors --------- */
+/* --------- borders --------- */
+/* --------- Images --------- */
+/* --------- Fonts --------- */
+#main_wrapper {
+  box-sizing: border-box;
+  padding: 0 20px;
+  width: 100%; }
+
+#wrapper {
+  margin-left: 290px; }
+
+#title {
+  font-size: 1.6em;
+  margin-left: 10px; }
+
+#date_interval_wrapper {
+  font-size: 1.5em;
+  margin-left: 10px; }
+
+#print_button {
+  float: right;
+  margin: 8px; }
+
+#no_records {
+  margin-top: 50px;
+  text-align: center; }
+
+/* --------- Sidebar --------- */
+#reset_filter {
+  left: 270px;
+  position: absolute; }
+  #reset_filter:after {
+    content: "x"; }
+  #reset_filter:hover {
+    color: #000; }
+
+#filter_form {
+  box-sizing: border-box;
+  padding: 0 10px;
+  position: relative;
+  z-index: 4; }
+  #filter_form h2 {
+    font-size: 1.1em;
+    margin: 10px 0 10px -10px; }
+  #filter_form fieldset {
+    clear: both;
+    display: block;
+    margin: 10px 0 10px 20px; }
+  #filter_form input[type=checkbox] {
+    margin: 0 5px 5px 0;
+    vertical-align: top; }
+  #filter_form .wrapper {
+    display: block; }
+  #filter_form .datepicker {
+    display: inline-block;
+    text-align: center;
+    width: 90px; }
+
+#station_chosen {
+  width: auto !important; }
+
+#period_wrapper {
+  margin-top: 10px; }
+  #period_wrapper span {
+    color: #aaa; }
+
+#submit_filter_button {
+  margin: 15px auto 0; }
+
+/* --------- Tables --------- */
+#records_table th {
+  text-align: center; }
+
+/* --------- Charts --------- */
+#chart {
+  clear: both;
+  height: 500px; }
+  #chart span.ct-horizontal {
+    height: 0 !important;
+    margin: 20px 0 50px -30px !important;
+    -webkit-transform: rotate(-40deg);
+    -moz-transform: rotate(-40deg);
+    -ms-transform: rotate(-40deg);
+    -o-transform: rotate(-40deg);
+    transform: rotate(-40deg);
+    -webkit-transform-origin: 380% 2%;
+    width: 10px !important; }
+  #chart .vertical-line {
+    stroke: #000;
+    stroke-width: 1px; }
+
+@media (max-width: 1100px) {
+  #chart .point_size_6,
+  #chart .point_size_5,
+  #chart .point_size_4 {
+    stroke-width: 0px; }
+  #chart .point_size_3 {
+    stroke-width: 5px; }
+  #chart .point_size_2 {
+    stroke-width: 6px; }
+  #chart .point_size_1 {
+    stroke-width: 8px; }
+  #chart .point_size_0 {
+    stroke-width: 10px; }
+  #chart .line_size_6,
+  #chart .line_size_5,
+  #chart .line_size_4,
+  #chart .line_size_3 {
+    stroke-width: 1px; }
+  #chart .line_size_2 {
+    stroke-width: 2px; }
+  #chart .line_size_1,
+  #chart .line_size_0 {
+    stroke-width: 3px; } }
+@media (min-width: 1100px) {
+  #chart .point_size_6,
+  #chart .point_size_5 {
+    stroke-width: 0px; }
+  #chart .point_size_4,
+  #chart .point_size_3 {
+    stroke-width: 5px; }
+  #chart .point_size_2 {
+    stroke-width: 6px; }
+  #chart .point_size_1 {
+    stroke-width: 8px; }
+  #chart .point_size_0 {
+    stroke-width: 10px; }
+  #chart .line_size_6,
+  #chart .line_size_5 {
+    stroke-width: 1px; }
+  #chart .line_size_4,
+  #chart .line_size_3 {
+    stroke-width: 2px; }
+  #chart .line_size_2 {
+    stroke-width: 2px; }
+  #chart .line_size_1,
+  #chart .line_size_0 {
+    stroke-width: 3px; } }
+@media (min-width: 1300px) {
+  #chart .point_size_6 {
+    stroke-width: 0px; }
+  #chart .point_size_5,
+  #chart .point_size_4 {
+    stroke-width: 4px; }
+  #chart .point_size_3 {
+    stroke-width: 6px; }
+  #chart .point_size_2,
+  #chart .point_size_1 {
+    stroke-width: 8px; }
+  #chart .point_size_0 {
+    stroke-width: 10px; }
+  #chart .line_size_6,
+  #chart .line_size_5 {
+    stroke-width: 1px; }
+  #chart .line_size_4,
+  #chart .line_size_3 {
+    stroke-width: 2px; }
+  #chart .line_size_2 {
+    stroke-width: 2px; }
+  #chart .line_size_1,
+  #chart .line_size_0 {
+    stroke-width: 3px; } }
+@media (min-width: 1600px) {
+  #chart .point_size_6 {
+    stroke-width: 0px; }
+  #chart .point_size_5 {
+    stroke-width: 5px; }
+  #chart .point_size_4 {
+    stroke-width: 6px; }
+  #chart .point_size_3,
+  #chart .point_size_2 {
+    stroke-width: 8px; }
+  #chart .point_size_1,
+  #chart .point_size_0 {
+    stroke-width: 10px; }
+  #chart .line_size_6,
+  #chart .line_size_5 {
+    stroke-width: 1px; }
+  #chart .line_size_4,
+  #chart .line_size_3 {
+    stroke-width: 2px; }
+  #chart .line_size_2,
+  #chart .line_size_1 {
+    stroke-width: 2px; }
+  #chart .line_size_0 {
+    stroke-width: 3px; } }
+@media (min-width: 1900px) {
+  #chart .point_size_6 {
+    stroke-width: 0px; }
+  #chart .point_size_5 {
+    stroke-width: 5px; }
+  #chart .point_size_4 {
+    stroke-width: 6px; }
+  #chart .point_size_3 {
+    stroke-width: 8px; }
+  #chart .point_size_2,
+  #chart .point_size_1,
+  #chart .point_size_0 {
+    stroke-width: 10px; }
+  #chart .line_size_6,
+  #chart .line_size_5,
+  #chart .line_size_4 {
+    stroke-width: 1px; }
+  #chart .line_size_3 {
+    stroke-width: 2px; }
+  #chart .line_size_2,
+  #chart .line_size_1 {
+    stroke-width: 2px; }
+  #chart .line_size_0 {
+    stroke-width: 3px; } }
+#legend {
+  border-collapse: collapse;
+  margin: 10px auto 0;
+  width: auto; }
+  #legend caption {
+    font-weight: bold;
+    padding: 10px; }
+  #legend td {
+    border: 1px solid #ddd;
+    padding: 5px; }
+  #legend span {
+    display: block;
+    height: 10px;
+    width: 10px; }
+  #legend .color_1 {
+    background-color: #d70206; }
+  #legend .color_2 {
+    background-color: #f05b4f; }
+  #legend .color_3 {
+    background-color: #f4c63d; }
+  #legend .color_4 {
+    background-color: #d17905; }
+  #legend .color_5 {
+    background-color: #453d3f; }
+  #legend .color_6 {
+    background-color: #59922b; }
+
+/* ---------------- Responsive Design ---------------- */
+@media (max-width: 1200px) {
+  #display_sidebar_button {
+    display: inline-block; }
+
+  #reset_filter {
+    float: right;
+    left: 0;
+    margin: 10px;
+    position: relative; }
+
+  #filter_form {
+    padding: 0 0 20px 0; }
+    #filter_form fieldset {
+      clear: none; }
+
+  #records_table {
+    width: 100%; } }

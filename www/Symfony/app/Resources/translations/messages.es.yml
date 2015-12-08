@@ -1,0 +1,31 @@
+action:
+    accept: Aceptar
+    create: Crear
+    delete: Eliminar
+    enter: Entrar
+    filter: Filtrar
+    print: Imprimir
+    send: Enviar
+    update: Actualizar
+filter_form:
+    date_1: Desde
+    date_2: Hasta
+    item: Elemento
+    last_24_hour: Últimas 24 horas
+    period: Periodo de tiempo
+    reset: Resetear parámetros
+    station: Estación
+home:
+    name: Inicio
+blog:
+    name: Blog
+contact:
+    name: Contacto
+footer:
+    author: 'Autor: <a href="url" target="_blank">Eduardo Casas</a>'
+    cookies: Política de <a href="url" target="_blank">Cookies</a>
+    github: Disponible en <a href="url" target="_blank">GitHub</a>
+    symfony: Creado con <a target="_blank" href="url" target="_blank">Symfony (2.7)</a>
+    license: 'Licencia: <a href="url" target="_blank">Creative Commons Attribution 3.0 Unported</a>'
+yes: Sí
+no: No

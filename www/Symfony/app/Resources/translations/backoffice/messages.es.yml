@@ -1,0 +1,19 @@
+backoffice:
+    article:
+        create: Crear Artículo
+        delete: ¿Quieres eliminar este artículo?
+        name: Artículos
+        title: Lista de Artículos
+        item:
+            creation_date: Registro
+            title: Título
+    security:
+        login:
+            title: Inciar Sesión
+    tag:
+        delete: ¿Quieres eliminar esta etiqueta?
+        name: Tags
+        title: Lista de Tags
+        item:
+            name: Nombre
+            slug: Slug

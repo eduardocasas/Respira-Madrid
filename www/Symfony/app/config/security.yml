@@ -1,0 +1,35 @@
+security:
+    
+    encoders:
+        Symfony\Component\Security\Core\User\User:
+            algorithm: plaintext
+
+    providers:
+        my_in_memory_provider:
+            memory:
+                users:
+                    eduardo:
+                        password: 111111
+                        roles:    [ROLE_USER, ROLE_ADMIN]
+
+    firewalls:
+        # disables authentication for assets and the profiler, adapt it according to your needs
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        secured_area:
+            pattern:    /backoffice
+            form_login:
+                check_path: backoffice_login_check
+                login_path: backoffice_login
+                default_target_path: backoffice
+                provider: my_in_memory_provider
+            logout:
+                path: backoffice_logout
+                target: backoffice_login
+            anonymous: true
+            
+    access_control:
+        - { path: /backoffice/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: /backoffice, roles: ROLE_ADMIN }

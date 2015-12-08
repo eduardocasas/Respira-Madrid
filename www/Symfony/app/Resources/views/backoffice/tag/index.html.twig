@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'backoffice.tag.title'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/backoffice/backoffice_base.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/app/css/backoffice/tag/index.css') }}">
+{% endblock %}
+{% block sidebar %}
+{% include 'backoffice/backoffice_sidebar.html.twig' %}
+{% endblock %}
+{% block main %}
+    <a href="{{ url('backoffice_tag_create') }}" class="default_button" id="create_button">{{ 'action.create'|trans }}</a>
+    <h1 class="title_1">{{ 'backoffice.tag.title'|trans }}</h1>
+    <table class="item_table">
+        <thead>
+            <tr>
+                <th class="empty"></th>
+                <th class="name_field">{{ 'backoffice.tag.item.name'|trans }}</th>
+                <th class="date_field">{{ 'backoffice.tag.item.slug'|trans }}</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for tag in tags %}
+            <tr>
+                <td class="button"><a href="{{ url('backoffice_tag_update', { tagId: tag.id }) }}"></a></td>
+                <td>{{ tag.name }}</td>
+                <td>{{ tag.slug }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

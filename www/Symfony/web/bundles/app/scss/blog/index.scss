@@ -1,0 +1,39 @@
+@import 'partials/_parameters';
+@import 'partials/_resources';
+
+#wrapper {
+    margin-left: $sidebar_width;
+}
+#rss {
+    background: $url_rss_img no-repeat;
+    display: block;
+    float: right;
+    height: 30px;
+    width: 30px;
+}
+.article_wrapper {
+    time {
+        display: block;
+        font-family: "Noto Serif", serif;
+        font-size: 1em;
+        margin: 10px 0;
+    }
+    h2 {
+        font-size: 1.7em;
+        margin: 30px 0 15px;
+    }
+    a {
+        color: $highlight_text_color;
+        font-family: "league-gothic";
+        font-weight: normal;
+        &:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+    p {
+        clear: both;
+        font-family: "Noto Serif", serif;
+        font-size: 1.1em;
+    }
+}

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}
+{{ 'backoffice.tag.title'|trans }}
+{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/backoffice/backoffice_base.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/app/css/backoffice/tag/form.css') }}">
+{% endblock %}
+{% block sidebar %}
+{% include 'backoffice/backoffice_sidebar.html.twig' %}
+{% endblock %}
+{% block main %}
+    <h1 class="title_1">{{ 'backoffice.tag.create'|trans }}</h1>
+    <form action="{{ path('backoffice_tag_create_submit') }}" method="post" id="tag_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.name) }}
+            {{ form_errors(form.name) }}
+            {{ form_widget(form.name) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.slug) }}
+            {{ form_errors(form.slug) }}
+            {{ form_widget(form.slug) }}
+        </fieldset>
+        <input type="submit" class="default_button" value="{{ 'action.create'|trans }}">
+        {{ form_end(form) }}
+    </form>
+{% endblock %}

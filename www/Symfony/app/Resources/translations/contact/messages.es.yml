@@ -1,0 +1,23 @@
+contact:
+    description: Envía un mensaje. Ponte en contacto por medio del formulario de contacto.
+    title: Contacto | Respira Madrid
+    title_1: Formulario de Contacto
+    form:
+        name:
+            label: Nombre
+            placeholder: Tu nombre completo
+        email:
+            label: Email
+            placeholder: Tu dirección de correo electrónico
+        subject:
+            label: Asunto
+            placeholder: El asunto de tu mensaje
+        message:
+            label: Mensaje
+            placeholder: El cuerpo de tu mensaje
+    accomplished:
+        description: Tu mensaje ha sido enviado correctamente.
+        title: Mensaje enviado 
+        text_1: ¡Hola! Tu mensaje ha sido enviado correctamente. Recibirás una respuesta lo antes posible.
+        text_2: Gracias por ponerte en contacto.
+        text_3: www.respiramadrid.com

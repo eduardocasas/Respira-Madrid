@@ -1,0 +1,13 @@
+@import "partials/_parameters.scss";
+@import "partials/_markdown.scss";
+
+html {
+    padding:0 10px;
+}
+body {
+    margin:0;
+    padding:0;
+    background: $body_background_color;
+}
+
+@include markdown_preview('#epiceditor-preview');

@@ -1,0 +1,31 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'contact.title'|trans }}{% endblock %}
+{% block description %}{{ 'contact.description'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/contact/index.css') }}">
+{% endblock %}
+{% block main %}
+    <h1 class="title_1">{{ 'contact.title_1'|trans }}</h1>
+    <form action="{{ path('contact_submit') }}" method="post" id="contact_form">
+        {{ form_start(form) }}
+        {{ form_errors(form) }}
+        <fieldset>
+            {{ form_label(form.email) }}
+            {{ form_errors(form.email) }}
+            {{ form_widget(form.email) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.subject) }}
+            {{ form_errors(form.subject) }}
+            {{ form_widget(form.subject) }}
+        </fieldset>
+        <fieldset>
+            {{ form_label(form.message) }}
+            {{ form_errors(form.message) }}
+            {{ form_widget(form.message) }}
+        </fieldset>
+        <input type="submit" class="default_button" value="{{ 'action.send'|trans }}">
+        {{ form_end(form) }}
+    </form>
+{% endblock %}

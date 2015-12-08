@@ -1,0 +1,9 @@
+error:
+    description: Se ha producido un error. Vuelve a intentarlo en unos minutos.
+    title: Se ha producido un error.
+    404:
+        description: Esta página no existe. Revisa la dirección que has introducido.
+        title: Página no encontrada
+    500:
+        description: Se ha producido un error en el servidor. Vuelve a intentarlo en unos minutos.
+        title: Error en el servidor.

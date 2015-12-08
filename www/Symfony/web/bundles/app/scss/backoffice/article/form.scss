@@ -1,0 +1,80 @@
+@import 'partials/_parameters';
+
+#delete_button {
+    float: right;
+}
+#delete_wrapper {
+    $width: 450px;
+    margin: 100px 0 0 215px;
+    width: $width;
+}
+#article_form {
+    background-color: $main_block_background;
+    border: $main_block_border;
+    border-radius: 5px;
+    margin: 40px auto 0;
+    padding: 20px 50px;
+    width: 650px;
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    fieldset {
+        margin: 20px 0;
+    }
+    input[type=email],
+    input[type=text],
+    textarea {
+        padding: 6px 8px;
+        width: 100%;
+    }
+    textarea {
+        height: 150px;
+    }
+    input[type=submit] {
+        margin: 10px auto;
+    }
+}
+fieldset#state_wrapper {
+    float: right;
+    margin: 30px 0 0;
+    label {
+        display: inline-block;
+    }
+    input {
+        vertical-align: middle;
+    }
+}
+#language_wrapper {
+    label {
+        display: inline-block;
+    }    
+}
+#tag_fieldset {
+    fieldset {
+        margin: 0 0 0 20px;
+    }
+    input {
+        vertical-align: middle;
+    }
+    label {
+        display: inline-block;
+    }
+}
+#article_form_article_extend_markdown,
+#html_content_wrapper {
+    display: none;
+}
+#epiceditor {
+    height: 500px;
+    margin-top: -20px;
+}
+#markdown_cheatsheet {
+    float: right;
+    margin: 20px 0 0 0;
+    text-decoration: underline;
+    &:hover {
+        font-weight: bold;
+    }
+}

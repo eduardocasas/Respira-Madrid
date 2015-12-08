@@ -1,0 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ article.title }}{% endblock %}
+{% block description %}{{ article.summary }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/blog/blog_base.css') }}">
+<link rel="stylesheet" href="{{ asset('bundles/app/css/blog/article.css') }}">
+{% endblock %}
+{% block js %}
+<link rel="stylesheet" href="{{ asset('bundles/app/js/blog/index.js') }}">
+{% endblock %}
+{% block sidebar %}
+{% include 'blog/blog_sidebar.html.twig' %}
+{% endblock %}
+{% block main %}
+<h1 class="title_1">{{ article.title }}</h1>
+<time id="time" datetime="{{ article.date|date('Y-m-d') }}">{{ article.date|localizeddate('long', 'none', app.request.locale) }}</time>
+<ul id="article_tag_collection">
+{% for tag in article.tags %}
+    <li><a href="{{ url('blog_tag', { tagSlug: tag.slug }) }}">{{ tag.name }}</a></li>
+{% endfor %}
+</ul>
+<div id="content">{{ article.articleExtend.html|raw }}</div>
+{% endblock %}

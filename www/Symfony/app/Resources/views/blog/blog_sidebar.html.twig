@@ -1,0 +1,15 @@
+<aside id="sidebar">
+    <h1>{{ 'blog.tag.title'|trans }}:</h1>
+    <ul>
+{% for tag in tags %}
+        <li>
+        {% if selectedTag is defined and selectedTag.slug == tag.slug %}
+            <strong>{{ tag.name }}</strong>
+        {% else %}
+            <a href="{{ url('blog_tag', { tagSlug: tag.slug }) }}">{{ tag.name }}</a>
+        {% endif %}
+        </li>
+{% endfor %}
+    </ul>
+    <img src="{{ asset('bundles/app/img/logo.png') }}" width="200px" id="logo"></span>
+</aside>

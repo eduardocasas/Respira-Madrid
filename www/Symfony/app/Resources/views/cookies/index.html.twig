@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ 'cookies.title'|trans }}{% endblock %}
+{% block description %}{{ 'cookies.description'|trans }}{% endblock %}
+{% block css %}
+<link rel="stylesheet" href="{{ asset('bundles/app/css/cookies/index.css') }}">
+{% endblock %}
+{% block main %}
+<div id="cookies_wrapper">
+    <h1 class="title_1">{{ 'cookies.title_1'|trans }}</h1>
+    <p>{{ 'cookies.t1'|trans }}</p>
+    <p>{{ 'cookies.t2'|trans }}</p>
+    <ul>
+        <li>{{ 'cookies.l1'|trans }}</li>
+        <li>{{ 'cookies.l2'|trans }}</li>
+        <li>{{ 'cookies.l3'|trans }}</li>
+    </ul>
+    <p>{{ 'cookies.t3'|trans }}</p>
+    <p>{{ 'cookies.t4'|trans }}</p>
+    <h2 class="title_1">{{ 'cookies.h1'|trans }}</h2>
+    <p>{{ 'cookies.t6'|trans }}</p>
+    <h2 class="title_1">{{ 'cookies.h2'|trans }}</h2>
+    <table>
+        <tr>
+            <th>{{ 'cookies.table.name'|trans }}</th>
+            <th>{{ 'cookies.table.purpose'|trans }}</th>
+            <th>{{ 'cookies.table.expiration'|trans }}</th>
+        </tr>
+        <tr>
+            <td>{{ 'cookies.essentials.name_1'|trans }}</td>
+            <td class="purpose">{{ 'cookies.essentials.purpose_1'|trans }}</td>
+            <td>{{ 'cookies.essentials.expiration_1'|trans }}</td>
+        </tr>
+    </table>
+    <h2 class="title_1">{{ 'cookies.h3'|trans }}</h2>
+    <table>
+        <tr>
+            <th>{{ 'cookies.table.name'|trans }}</th>
+            <th>{{ 'cookies.table.purpose'|trans }}</th>
+            <th>{{ 'cookies.table.expiration'|trans }}</th>
+        </tr>
+        <tr>
+            <td>{{ 'cookies.aux.name_1'|trans }}</td>
+            <td class="purpose">{{ 'cookies.aux.purpose_1'|trans|raw }}</td>
+            <td>{{ 'cookies.aux.expiration_1'|trans }}</td>
+        </tr>
+    </table>
+    <h2 class="title_1">{{ 'cookies.h4'|trans }}</h2>
+    <table>
+        <tr>
+            <th>{{ 'cookies.table.name'|trans }}</th>
+            <th>{{ 'cookies.table.purpose'|trans|raw }}</th>
+            <th>{{ 'cookies.table.expiration'|trans }}</th>
+        </tr>
+        <tr>
+            <td>{{ 'cookies.third_party.name_1'|trans }}</td>
+            <td class="purpose">{{ 'cookies.third_party.purpose_1'|trans|raw }}</td>
+            <td>{{ 'cookies.third_party.expiration_1'|trans }}</td>
+        </tr>
+    </table>
+</div>
+{% endblock %}

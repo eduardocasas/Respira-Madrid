@@ -1,0 +1,22 @@
+{
+  "name": "RespiraMadrid",
+  "version": "0.0.1",
+  "authors": [
+    "eduardocasas <http://www.eduardocasas.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "chartist": "~0.9.4",
+    "eduardocasas-chosen": "~1.0.2",
+    "jquery": "~2.1.4",
+    "jquery-ui": "~1.11.4",
+    "EpicEditor": "~0.2.3"
+  }
+}

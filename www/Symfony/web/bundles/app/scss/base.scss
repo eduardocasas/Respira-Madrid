@@ -1,0 +1,508 @@
+@import 'partials/_parameters';
+@import 'partials/_resources';
+
+@font-face {
+    font-family: "league-gothic";
+    src: $url_font_gothic_eot;
+    src: $url_font_gothic_eot_iefix format('embedded-opentype'),
+         $url_font_gothic_ttf format('truetype'),
+         $url_font_gothic_woff format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+summary,
+video {
+    display: block;
+}
+* {
+    border: none;
+    color: $default_text_color;
+    margin: 0;
+    padding: 0;
+}
+:focus {
+    outline:none;
+}
+::-moz-focus-inner {
+    border:0;
+}
+a {
+    &:link,
+    &:visited {
+        text-decoration:none;
+        outline: none;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+ul {
+    list-style-type: none;
+}
+input {
+    border: none;
+}
+input[type=text],
+input[type=email],
+input[type=radio],
+input[type=checkbox],
+input[type=input],
+input[type=password],
+textarea,
+select,
+option {
+    background-color: $input_background_color;
+    border: $main_block_border;
+    border-radius: 5px;
+    box-sizing: border-box;
+    padding: 3px 5px;
+}
+select,
+option {
+    box-sizing: border-box;
+    padding: 0 5px;
+}
+textarea:focus,
+input[type=email]:focus,
+input[type=text]:focus,
+input[type=password]:focus,
+select:focus,
+option:focus {
+    background-color: $input_background_color_hover;
+}
+input[disabled=disabled],
+select[disabled=disabled],
+select[disabled=disabled] option,
+textarea[disabled=disabled] {
+    background-color: $input_background_color_disabled;
+}
+input, textarea {
+    font-family: arial;
+    font-size: 1em;
+}
+label, select, option,
+input[type="checkbox"],
+input[type="radio"] {
+    cursor: pointer;
+}
+input[type="file"] {
+    display: none;
+}
+p {
+    line-height: 150%;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+/* ---------------- buttons ---------------- */
+
+button {
+    background: none;
+    cursor: pointer;
+}
+.default_button {
+    border: 1px solid #000;
+    border-radius: 5px;
+    box-shadow: inset 0 1px 3px rgba(255,255,255,0.4), 0 1px 2px rgba(0,0,0,0.45);    
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding: 5px 10px;
+    text-shadow: 0 -0.1em 0 #333;    
+}
+.default_button {
+    background: #58a9e2;
+    background: -moz-linear-gradient(top,  #58a9e2 0%, #346cce 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#58a9e2), color-stop(100%,#346cce)); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,  #58a9e2 0%,#346cce 100%); /* Chrome10+,Safari5.1+ */
+    background: linear-gradient(to bottom,  #58a9e2 0%,#346cce 100%); /* W3C */
+    border: 1px solid #000;
+}
+.default_button:hover {
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+    box-shadow: inset 0 0 6px #000;
+    text-decoration: none;
+}
+
+/* ---------------- tables ---------------- */
+
+.table_1 {
+    margin: 50px auto 0;
+    tr {
+        background-color: $main_block_background;
+    }
+    td,
+    th {
+        border: 2px solid #fff;
+        padding: 10px 15px;
+        text-align: left;
+    }
+    .center {
+        text-align: center;
+    }
+    .min_width {
+        min-width: 120px;
+    }
+    .empty {
+        background-color: #fff;
+    }
+    .sort {
+        cursor: pointer;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+}
+
+/* ---------------- Windows ---------------- */
+
+.wrapper_fadein_window {
+    display: none;
+    position: fixed;
+    .close {
+        background: none;
+        color: #999;
+        float: right;
+        font-size: 1.3em;
+        margin: -10px -10px 0 0;
+        position: relative;
+        &:before {
+            content: "x";
+        }
+        &:hover {
+            color: #000;
+        }        
+    }
+}
+.disable_window_background {
+    background-color: #000;
+    position: fixed;
+    opacity: 0.6;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: $disable_background_index;
+}
+.fadein_window {
+    $padding-h: 30px;
+    background-color: #fff;
+    border: 3px double #aaa;
+    border-radius: 10px;
+    -moz-box-shadow: 0 0 5px #000 inset, 0 0 15px #000;
+    -webkit-box-shadow: 0 0 5px #000 inset, 0 0 15px #000;
+    box-shadow: 0 0 5px #000 inset, 0 0 15px #000;
+    margin: 10px;
+    width: 100%;
+    padding: 20px $padding-h;
+    position: absolute;
+    z-index: $fadein_window_index;
+    h1 {
+        color: #666;
+        font-size: 1.1em;
+        margin: 30px 0 20px;
+        text-align: center;
+    }
+    .button_wrapper {
+        text-align: center;
+        button {
+            display: inline-block;
+            margin: 20px 5px;
+            width: 50px;
+        }
+    }
+    .error_data_message {
+        color: $error_text_color;
+        display: none;
+        height: 25px;
+        font-size: 0.95em;
+        font-weight: bold;
+        margin-left: -$padding-h;
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        span {
+            display: block;
+            margin-top: 20px;
+        }
+    }
+}
+
+
+/* ---------------- body ---------------- */
+
+html {
+    height: 100%;
+}
+body {
+    background-color: $body_background_color;
+    font-family: arial, verdana;
+    font-size: 0.85em;
+    min-height: 100%;
+    position: relative;
+}
+    
+/* ---------------- header ---------------- */  
+    
+#header {
+    background-color: $main_block_background;
+    border-bottom: $main_block_border;
+    left: 0;
+    min-height: $header_height;
+    position: fixed;
+    width: 100%;
+    z-index: $header_index;
+    h1 {
+        display: inline-block;
+        float: left;
+        font-size: 1.8em;
+        font-weight: normal;
+        margin: 15px 0 10px 20px;
+    }
+    nav {
+        float: right;
+        margin: 15px 25px 0 0;
+        ul {
+            display: inline-block;
+        }
+        li {
+            display: inline-block;
+            font-family: "league-gothic";
+            font-size: 1.9em;
+            margin-left: 10px;
+        }
+        strong,
+        h2,
+        a {
+            display: inline-block;
+        }
+        h2 {
+            font-size: 1em;
+        }
+        a {
+            color: $link_color;
+        }
+        strong,
+        h2,
+        a:hover {
+            color: #000;
+            font-weight: normal;
+            text-decoration: none;
+        }
+        .separator:before {
+            color: #ddd;
+            content: "|";
+            margin: 0 20px 0 10px;
+        }
+    }
+}
+#display_sidebar_button {
+    border-right: $main_block_border;
+    display: none;
+    height: inherit;
+    float: left;
+    padding: 15px;
+    width: 55px;
+    z-index: $display_sidebar_button_index;
+    span {
+        display: block;
+        border-top: 3px solid #505050;
+        margin-top: 3px;
+    }
+}
+#message_wrapper {
+    margin-left: 0;
+    text-align: center;
+}
+#loading {
+    background: $url_loading_img no-repeat;
+    display: none;
+    height: 35px;
+    margin: 12px auto 0;
+    width: 160px;
+}
+#saved_data_message {
+    color: $highlight_text_color;
+    display: none;
+    height: 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+    margin-top: -30px;
+    text-shadow: 0 0 7px #fff;
+    &:before {
+        content:"✔ ";
+        color: #1ab800;
+    }
+}
+#error_data_message {
+    color: $error_text_color;
+    display: none;
+    height: 15px;
+    font-size: 0.95em;
+    font-weight: bold;
+    margin-top: -20px;
+    span {
+        color: $error_text_color;
+        display: block;
+    }    
+}
+
+/* --------- main --------- */
+
+#wrapper {
+    box-sizing: border-box;
+    padding: 85px 0 90px;
+    overflow: hidden;    
+}
+#main_wrapper {
+    margin: 0 auto;
+    width: $wrapper_width;
+}
+.title_1 {
+    font-family : "league-gothic";   
+    font-size: 2em;
+    font-weight: normal;
+    margin-bottom: 20px;
+}
+
+/* --------- sidebar --------- */
+
+#sidebar {
+    background-color: $main_block_background;
+    border-right: $main_block_border;
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: $header_height;
+    width: $sidebar_width;
+    z-index: $sidebar_index;
+}
+#logo {
+    display: block;
+    margin: 0 auto;
+    opacity: 0.2;
+    bottom: 65px;
+    left: 44px;
+    position: absolute;
+    z-index: $sidebar_logo_index;
+}
+
+/* --------- footer --------- */
+
+#footer {
+    box-sizing: border-box;
+    background-color: $main_block_background;
+    border-top: $main_block_border;    
+    clear: both;
+    margin-left: $sidebar_width;
+    text-align: center;
+    padding: 15px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    li {
+        display: inline-block;        
+        margin: 5px 20px;
+    }
+    a {
+        font-weight: bold;
+    }
+    .separator:after {
+        box-sizing: border-box;
+        content:"|";
+        padding: 0 20px;
+    }    
+}
+
+/* ---------------- Cookies ---------------- */
+
+#cookies_footer_wrapper {
+    background-color: #ffe1b6;
+    bottom: 0;
+    position: fixed;
+    width: 100%;
+    z-index: 200;
+    p {
+        padding: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+    .default_button {
+        display: block;
+        font-size: 0.9em;
+        margin: 10px auto 0;
+        padding: 2px 6px;
+    }
+    a {
+        font-weight: bold;
+    }
+}
+
+/* ---------------- Responsive Design ---------------- */
+
+@media (max-width: $min_width) {
+    #main_wrapper {
+        box-sizing: border-box;
+        padding: 0 2%;
+        width: 100%;
+    }
+    #header {
+        min-height: $header_height_small;
+        top: 0;
+        nav {
+            margin-right: 15px;
+        }
+        h1 {
+            margin: 17px 0 0 10px;
+        }
+        h1,
+        li {
+            font-size: 1.3em !important; 
+        } 
+    }
+    #sidebar {
+        display: none;
+        margin: $header_height_small 0 (- $header_height_small) 0;
+        overflow: hidden;
+        position: relative;
+        top: 0;
+        width: 100%;
+    }
+    #logo {
+        display: none;
+    }
+    #wrapper {
+        margin-left: 0 !important;
+        padding: $header_height_small + 20px 0 20px;
+    }
+    #footer {
+        margin-left: 0 !important;
+    }
+    .title_1 {
+        font-size: 1.5em;
+    }
+    .table_1 {
+        td,
+        th {
+            font-size: 0.6em;
+            padding: 1% 2%;
+        }
+    }
+}

@@ -1,0 +1,13 @@
+home:
+    description: Consulta los datos sobre la calidad del aire en la ciudad de Madrid.
+    hour: Hora
+    legend: Leyenda
+    value: Valor
+    no_records: No existen registros para los requisitos introducidos.
+    title: "Niveles de contaminación atmosférica: location"
+    filter_title:
+        main: Niveles de contaminación atmosférica
+        24hours: Últimas 24 horas
+        from: Desde
+        to: Hasta
+            

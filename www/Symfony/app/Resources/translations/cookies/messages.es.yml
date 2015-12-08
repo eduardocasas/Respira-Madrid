@@ -1,0 +1,34 @@
+cookies:
+    description: Este sitio web usa cookies para mejorar y optimizar la experiencia del usuario.
+    footer:
+        t1: Utilizamos cookies propias y de terceros para mejorar la experiencia de usuario y ayudarnos a mejorar la aplicación. Al continuar navegando en este sitio aceptas el uso de estas cookies. <a href="url">Más información</a>. 
+    title: Politica de Cookies | Respira Madrid
+    title_1: Política de Cookies
+    t1: En ocasiones se necesita guardar una serie de datos en tu navegador. Estos datos son conocidos como "cookies". La mayoría de sitios web también lo hacen.
+    t2: "Algunas de las ventajas de las cookies son:"
+    l1: Recordar los parámetros de configuración, de manera que no necesitas estar introduciendo estos datos manualmente cada vez que visitas una sección
+    l2: Recordar la información que has facilitado (por ejemplo tu idioma) de manera que no necesitas tener que volver a introducirlo
+    l3: Permitir analizar cómo utilizas la aplicación de manera que así podamos ofrecerte un mejor servicio
+    t3: Te informamos que esta aplicación web utiliza cookies. Al navegar por esta aplicación prestas tu consentimiento para recibir dichas cookies. Estas cookies no son utilizadas para identificarte personalmente. Su única finalidad es la de mejorar la experiencia de usuario. Además siempre puedes gestionarlas y/o eliminarlas.
+    t4: Puedes encontrar más información sobre cookies y su gestión y/o borrado en AboutCookies.org. Si deseas saber cómo y cuándo utilizamos cookies en nuestra aplicación, por favor, continúa leyendo.
+    h1: Cómo utilizamos las cookies
+    t6: Esta aplicación utiliza cookies en diversos lugares. A continuación, hemos listado todas ellas detallando el porqué de su uso y su vigencia. El término "Final de sesión" significa que la cookie es temporal y que será eliminada cuando cierres el navegador.
+    h2: Cookies esenciales
+    h3: Cookies auxiliares
+    h4: Cookies de terceros
+    table:
+        name: Nombre
+        purpose: Propósito
+        expiration: Expiración
+    essentials:
+        name_1: PHPSESSID
+        purpose_1: Usada por el lenguaje PHP para permitir que las variables de sesión de usuario sean guardadas en el servidor web. Esta cookie es creada cuando se visita cualquier sitio de la aplicación.
+        expiration_1: Final de sesión
+    aux:
+        name_1: lssi
+        purpose_1:  Permite a la aplicación saber que has visto y aceptado el mensaje de advertencia sobre el uso de cookies.
+        expiration_1: 1 año
+    third_party:
+        name_1: counter_21
+        purpose_1: Utilizada por <a href="https://www.stathub.org/">StatHub.org</a> para almacenar información sobre cómo los usuarios utilizan la aplicación. Hacemos esto para para poder comprobar que la aplicación funciona tal y como se espera y obtener feedback de cara a realizar futuras mejoras. StatHub almacena información respecto a las páginas que visitas, el tiempo transcurrido, el punto de acceso, etc. Esta cookie es creada cuando se visita cualquier sitio de la aplicación.
+        expiration_1: 1 año

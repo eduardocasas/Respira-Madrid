@@ -1,0 +1,31 @@
+/* ------ z-index ------*/
+/* --------- dimmensions --------- */
+/* --------- colors --------- */
+/* --------- borders --------- */
+#sidebar {
+  box-sizing: border-box;
+  padding: 20px; }
+  #sidebar h1 {
+    font-family: "league-gothic";
+    font-size: 1.6em;
+    font-weight: normal; }
+  #sidebar ul {
+    margin: 10px 0 0 10px; }
+  #sidebar li {
+    margin-bottom: 5px; }
+  #sidebar strong {
+    font-family: "league-gothic";
+    font-size: 1.7em;
+    font-weight: normal; }
+  #sidebar a {
+    color: #888;
+    font-family: "league-gothic";
+    font-size: 1.7em; }
+    #sidebar a:hover {
+      color: #000;
+      text-decoration: none; }
+
+/* ---------------- Responsive Design ---------------- */
+@media (max-width: 1200px) {
+  #display_sidebar_button {
+    display: inline-block; } }

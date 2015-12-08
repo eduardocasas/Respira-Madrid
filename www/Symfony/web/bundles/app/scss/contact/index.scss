@@ -1,0 +1,44 @@
+@import 'partials/_parameters';
+
+#contact_form {
+    background-color: $main_block_background;
+    border: $main_block_border;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin: 40px auto 0;
+    padding: 20px 50px;
+    width: 600px;
+    label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    fieldset {
+        margin: 20px 0;
+    }
+    input[type=email],
+    input[type=text],
+    textarea {
+        padding: 6px 8px;
+        width: 100%;
+    }
+    textarea {
+        height: 150px;
+    }
+    input[type=submit] {
+        margin: 10px auto;
+    }
+}
+#footer {
+    margin-left: 0;
+}
+
+/* ---------------- Responsive Design ---------------- */
+
+@media (max-width: $min_width) {
+    #contact_form {
+        margin-top: 20px;
+        padding: 0 5%;
+        width: 100%;
+    }
+}

@@ -1,0 +1,39 @@
+@import 'partials/_parameters';
+
+#sidebar {
+    box-sizing: border-box;
+    padding: 20px;
+    h1 {
+        font-family: "league-gothic";
+        font-size: 1.6em;
+        font-weight: normal;
+    }
+    ul {
+        margin: 10px 0 0 10px;
+    }
+    li {
+        margin-bottom: 5px;
+    }
+    strong {
+        font-family: "league-gothic";
+        font-size: 1.7em;
+        font-weight: normal;
+    }
+    a {
+        color: $highlight_text_color;
+        font-family: "league-gothic";
+        font-size: 1.7em;
+        &:hover {
+            color: #000;
+            text-decoration: none;
+        }
+    }
+}
+
+/* ---------------- Responsive Design ---------------- */
+
+@media (max-width: $min_width) {
+    #display_sidebar_button {
+        display: inline-block;
+    }
+}

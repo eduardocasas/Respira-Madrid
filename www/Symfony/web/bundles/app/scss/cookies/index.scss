@@ -1,0 +1,39 @@
+@import 'partials/_parameters';
+
+#cookies_wrapper {
+    ul {
+        list-style-type: disc;
+        margin: 0 0 0 30px;
+    }
+    li {
+        margin-bottom: 10px;
+    }
+    table {
+        margin-bottom: 15px;
+        width: 100%;
+    }
+    th {
+        text-align: left;
+    }
+    td,
+    th {
+        background-color: $main_block_background;
+        border: 1px solid #fff;
+        padding: 5px 10px;
+    }
+    .purpose {
+        text-align: justify;
+    }
+    td,
+    p,
+    li {
+        font-family: "Noto Serif", serif;
+    }
+    a {
+        font-weight: bold;
+    }
+    margin-bottom: 20px;
+}
+#footer {
+    margin-left: 0;
+}

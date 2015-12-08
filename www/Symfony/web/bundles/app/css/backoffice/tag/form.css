@@ -1,0 +1,29 @@
+/* ------ z-index ------*/
+/* --------- dimmensions --------- */
+/* --------- colors --------- */
+/* --------- borders --------- */
+#delete_button {
+  float: right; }
+
+#delete_wrapper {
+  margin: 100px 0 0 215px;
+  width: 450px; }
+
+#tag_form {
+  background-color: #f7f7f7;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 40px auto 0;
+  padding: 20px 50px;
+  width: 450px; }
+  #tag_form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px; }
+  #tag_form fieldset {
+    margin: 20px 0; }
+  #tag_form input[type=text] {
+    padding: 6px 8px;
+    width: 100%; }
+  #tag_form input[type=submit] {
+    margin: 10px auto; }

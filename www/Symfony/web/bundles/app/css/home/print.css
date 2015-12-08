@@ -1,0 +1,14 @@
+#header,
+#sidebar,
+#footer,
+#print_button,
+#cookies_footer_wrapper {
+  display: none; }
+
+#wrapper {
+  margin: 0;
+  padding-top: 40px; }
+
+#chart {
+  margin: 0 auto;
+  width: 900px; }
