@@ -6,4 +6,4 @@ database:
         
 data:
     folder: ~
-    url: ~
+    url: http://www.mambiente.munimadrid.es/opendata/horario.txt
