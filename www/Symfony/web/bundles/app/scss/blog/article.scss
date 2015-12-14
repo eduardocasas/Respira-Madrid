@@ -33,19 +33,11 @@
             color: #000;
         }
     }
-    img {
-        &.center {
-            display: block;
-            margin: 0 auto;
-        }
-        &.left {
-            float: right;
-            margin-right: 15px;
-        }
-        &.right {
-            float: right;
-            margin-left: 15px;
-        }
+    h2 {
+        font-family : "league-gothic";   
+        font-size: 1.4em;
+        font-weight: normal;
+        margin: 20px 0 15px;
     }
 }
 

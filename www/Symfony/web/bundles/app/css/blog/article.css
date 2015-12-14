@@ -30,15 +30,11 @@
     text-decoration: underline; }
     #content a:hover {
       color: #000; }
-  #content img.center {
-    display: block;
-    margin: 0 auto; }
-  #content img.left {
-    float: right;
-    margin-right: 15px; }
-  #content img.right {
-    float: right;
-    margin-left: 15px; }
+  #content h2 {
+    font-family: "league-gothic";
+    font-size: 1.4em;
+    font-weight: normal;
+    margin: 20px 0 15px; }
 
 /* ---------------- Responsive Design ---------------- */
 @media (max-width: 1200px) {
