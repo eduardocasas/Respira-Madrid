@@ -9,6 +9,8 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
     <url><loc>{{ url('home') }}</loc></url>
     <!-- Contact -->
     <url><loc>{{ url('contact') }}</loc></url>
+    <!-- Cookies -->
+    <url><loc>{{ url('cookies') }}</loc></url>
     <!-- Blog -->
     <url><loc>{{ url('blog') }}</loc></url>
     <!-- Blog Tags -->
@@ -22,6 +24,4 @@ http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
         <lastmod>{{ article.date|date('c') }}</lastmod>
     </url>
     {% endfor %}
-    <!-- Cookies -->
-    <url><loc>{{ url('cookies') }}</loc></url>
 </urlset>
