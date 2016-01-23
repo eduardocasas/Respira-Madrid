@@ -15,18 +15,21 @@ class DefaultController extends Controller
         if ($form->isValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
-            ->setSubject($data['subject'])
-            ->setFrom($this->container->getParameter('my_email'))
-            ->setTo($this->container->getParameter('my_email'))
-            ->setBody('Correo enviado desde la web www.respiramadrid.com
-                    
-Email: '.$data['email'].'
+            ->setSubject($this->container->getParameter('mailer_prefix_site').'Correo enviado desde la web')
+            ->setFrom($this->container->getParameter('mailer_user'))
+            ->setTo($this->container->getParameter('mailer_user'))
+            ->setBody('Email: '.$data['email'].'
     
 Asunto: '.$data['subject'].'
     
 Mensaje:
                     
 '.$data['message']);
+            file_put_contents(
+                $this->container->getParameter('kernel.logs_dir').'/email/'.date('Y-m-d').'.log',
+                "\n".$message->getHeaders()->toString()."\n".$message->getBody(),
+                FILE_APPEND
+            );
             $this->get('mailer')->send($message);
             $this->get('session')->set('email_sent', true);
 
