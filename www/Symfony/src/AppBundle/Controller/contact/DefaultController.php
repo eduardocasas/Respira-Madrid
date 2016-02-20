@@ -3,15 +3,16 @@
 namespace AppBundle\Controller\contact;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\ContactType;
 
 class DefaultController extends Controller
 {
     
-    public function submitAction()
+    public function submitAction(Request $request)
     {
         $form = $this->createForm(new ContactType);
-        $form->bind($this->getRequest());
+        $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
             $message = \Swift_Message::newInstance()
@@ -19,7 +20,7 @@ class DefaultController extends Controller
             ->setFrom($this->container->getParameter('mailer_user'))
             ->setTo($this->container->getParameter('mailer_user'))
             ->setBody('Email: '.$data['email'].'
-    
+
 Asunto: '.$data['subject'].'
     
 Mensaje:
