@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
@@ -12,51 +13,50 @@ use AppBundle\Entity\Article;
 
 class ArticleType extends AbstractType
 {
-    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
             ->add('active', CheckboxType::class, [
-                'label' => 'backoffice.article.form.active', 'required' => false
+                'label' => 'backoffice.article.form.active', 'required' => false,
             ])
             ->add('language', ChoiceType::class, [
                 'choices' => [
                      Article::SPANISH_LANGUAGE => 'Español',
                      Article::ENGLISH_LANGUAGE => 'Inglés',
-                     Article::BOTH_LANGUAGE => 'Ambos'
+                     Article::BOTH_LANGUAGE => 'Ambos',
                 ],
                 'choice_translation_domain' => false,
                 'label' => 'backoffice.article.form.language',
-                'required' => true
+                'required' => true,
             ])
             ->add('title', TextType::class, [
                 'attr' => ['autofocus' => 'autofocus'],
                 'label' => 'backoffice.article.form.name',
-                'required' => true
+                'required' => true,
             ])
             ->add('slug', TextType::class, [
                 'label' => 'backoffice.article.form.slug',
-                'required' => true
+                'required' => true,
             ])
             ->add('thumbnail', TextType::class, [
                 'label' => 'backoffice.article.form.picture',
-                'required' => false
+                'required' => false,
             ])
             ->add('thumbnail_alt', TextType::class, [
                 'label' => 'backoffice.article.form.alt',
-                'required' => false
+                'required' => false,
             ])
             ->add('summary', TextareaType::class, [
                 'label' => 'backoffice.article.form.summary',
-                'required' => true
+                'required' => true,
             ])
             ->add('tags', EntityType::class, [
                 'translation_domain' => false,
-                'label' => 'Tags:', 
+                'label' => 'Tags:',
                 'class' => 'AppBundle:Tag',
                 'choice_label' => 'name',
                 'multiple' => true,
-                'expanded' => true
+                'expanded' => true,
             ])
             ->add('article_extend', ArticleExtendType::class, [
                 'label' => 'hy',
@@ -67,5 +67,4 @@ class ArticleType extends AbstractType
     {
         return 'article_form';
     }
-
 }

@@ -1,4 +1,5 @@
 <?php
+
 namespace AppBundle\Form\Type;
 
 use Symfony\Component\Form\AbstractType;
@@ -8,7 +9,6 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 
 class ArticleExtendType extends AbstractType
 {
-    
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
@@ -21,7 +21,7 @@ class ArticleExtendType extends AbstractType
                 'required' => false,
             ]);
     }
-    
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(['data_class' => 'AppBundle\Entity\ArticleExtend']);
@@ -31,5 +31,4 @@ class ArticleExtendType extends AbstractType
     {
         return 'article_extend_form';
     }
-
 }

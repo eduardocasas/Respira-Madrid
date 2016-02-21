@@ -9,16 +9,15 @@ use AppBundle\Form\Type\ArticleType;
 
 class UpdateController extends Controller
 {
-
     public function deleteAction($articleId)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($em->getRepository('AppBundle:Article')->find($articleId));
-        $em->flush(); 
+        $em->flush();
 
         return new Response($this->generateUrl('backoffice_article'));
     }
-    
+
     public function submitAction(Request $request, $articleId)
     {
         $em = $this->getDoctrine()->getManager();
@@ -37,10 +36,10 @@ class UpdateController extends Controller
 
         return $this->render('backoffice/article:update.html.twig', [
             'article' => $entity,
-            'form' => $editForm->createView()
+            'form' => $editForm->createView(),
         ]);
     }
-    
+
     public function indexAction($articleId)
     {
         $article = $this->getDoctrine()->getManager()->getRepository('AppBundle:Article')->find($articleId);
@@ -51,7 +50,7 @@ class UpdateController extends Controller
 
         return $this->render('backoffice/article/update.html.twig', [
             'article' => $article,
-            'form'   => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 }

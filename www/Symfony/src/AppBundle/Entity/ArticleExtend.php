@@ -3,10 +3,9 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use AppBundle\Entity\Article;
 
 /**
- * ArticleExtend
+ * ArticleExtend.
  *
  * @ORM\Table(name="article_extend")
  * @ORM\Entity
@@ -14,7 +13,7 @@ use AppBundle\Entity\Article;
 class ArticleExtend
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -28,7 +27,7 @@ class ArticleExtend
      * @ORM\Column(name="html", type="text")
      */
     private $html;
-    
+
     /**
      * @var string
      *
@@ -36,12 +35,12 @@ class ArticleExtend
      */
     private $markdown;
 
-   /**
+    /**
      * @ORM\OneToOne(targetEntity="Article", inversedBy="article_extend")
      * @ORM\JoinColumn(name="id", referencedColumnName="id", onDelete="CASCADE")
      */
     private $article;
-    
+
     public function setArticle(Article $article)
     {
         $this->article = $article;
@@ -53,9 +52,9 @@ class ArticleExtend
     }
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer 
+     * @return int
      */
     public function getId()
     {
@@ -63,49 +62,50 @@ class ArticleExtend
     }
 
     /**
-     * Set html
+     * Set html.
      *
      * @param string $html
+     *
      * @return ArticleExtend
      */
     public function setHtml($html)
     {
         $this->html = $html;
-    
+
         return $this;
     }
 
     /**
-     * Get html
+     * Get html.
      *
-     * @return string 
+     * @return string
      */
     public function getHtml()
     {
         return $this->html;
     }
-    
+
     /**
-     * Set markdown
+     * Set markdown.
      *
      * @param string $markdown
+     *
      * @return ArticleExtend
      */
     public function setMarkdown($markdown)
     {
         $this->markdown = $markdown;
-    
+
         return $this;
     }
 
     /**
-     * Get markdown
+     * Get markdown.
      *
-     * @return string 
+     * @return string
      */
     public function getMarkdown()
     {
         return $this->markdown;
     }
-    
 }

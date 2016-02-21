@@ -9,12 +9,11 @@ use AppBundle\Form\Type\TagType;
 
 class UpdateController extends Controller
 {
-
     public function deleteAction($tagId)
     {
         $em = $this->getDoctrine()->getManager();
         $em->remove($em->getRepository('AppBundle:Tag')->find($tagId));
-        $em->flush(); 
+        $em->flush();
 
         return new Response($this->generateUrl('backoffice_tag'));
     }
@@ -37,10 +36,10 @@ class UpdateController extends Controller
 
         return $this->render('backoffice/tag/update.html.twig', [
             'tag' => $entity,
-            'form' => $editForm->createView()
+            'form' => $editForm->createView(),
         ]);
     }
-    
+
     public function indexAction($tagId)
     {
         $em = $this->getDoctrine()->getManager();
@@ -52,7 +51,7 @@ class UpdateController extends Controller
 
         return $this->render('backoffice/tag/update.html.twig', [
             'tag' => $entity,
-            'form' => $form->createView()
+            'form' => $form->createView(),
         ]);
     }
 }

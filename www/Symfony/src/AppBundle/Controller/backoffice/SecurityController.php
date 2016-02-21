@@ -13,7 +13,7 @@ class SecurityController extends Controller
         if ($authorizationChecker->isGranted('ROLE_ADMIN')) {
             return $this->redirect($this->generateUrl('backoffice'));
         }
-        
+
         $authenticationUtils = $this->get('security.authentication_utils');
         // get the login error if there is one
         $error = $authenticationUtils->getLastAuthenticationError();
@@ -25,7 +25,7 @@ class SecurityController extends Controller
             array(
                 // last username entered by the user
                 'last_username' => $lastUsername,
-                'error'         => $error,
+                'error' => $error,
             )
         );
     }

@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * StationItem
+ * StationItem.
  *
  * @ORM\Table(name="station_item", uniqueConstraints={@ORM\UniqueConstraint(name="rel", columns={"station_id", "item_id"})}, indexes={@ORM\Index(name="fk_rel_item", columns={"item_id"}), @ORM\Index(name="IDX_F128022321BDB235", columns={"station_id"})})
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class StationItem
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -41,12 +41,10 @@ class StationItem
      */
     private $station;
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -54,7 +52,7 @@ class StationItem
     }
 
     /**
-     * Set item
+     * Set item.
      *
      * @param \AppBundle\Entity\Item $item
      *
@@ -68,7 +66,7 @@ class StationItem
     }
 
     /**
-     * Get item
+     * Get item.
      *
      * @return \AppBundle\Entity\Item
      */
@@ -78,7 +76,7 @@ class StationItem
     }
 
     /**
-     * Set station
+     * Set station.
      *
      * @param \AppBundle\Entity\Station $station
      *
@@ -92,7 +90,7 @@ class StationItem
     }
 
     /**
-     * Get station
+     * Get station.
      *
      * @return \AppBundle\Entity\Station
      */

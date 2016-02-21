@@ -20,22 +20,22 @@ class ContactType extends AbstractType
                 'label' => 'contact.form.email.label',
                 'attr' => [
                     'placeholder' => 'contact.form.email.placeholder',
-                    'required' => true
-                ]
+                    'required' => true,
+                ],
             ])
             ->add('subject', TextType::class, [
                 'label' => 'contact.form.subject.label',
                 'attr' => [
                     'placeholder' => 'contact.form.subject.placeholder',
-                    'required' => true
-                ]
+                    'required' => true,
+                ],
             ])
             ->add('message', TextareaType::class, [
                 'label' => 'contact.form.message.label',
                 'attr' => [
                     'placeholder' => 'contact.form.message.placeholder',
-                    'required' => true
-                ]
+                    'required' => true,
+                ],
             ]);
     }
 
@@ -44,7 +44,7 @@ class ContactType extends AbstractType
         $resolver->setDefaults(['constraints' => new Collection([
             'email' => [new NotBlank(['message' => 'Email should not be blank.'])],
             'subject' => [new NotBlank(['message' => 'Subject should not be blank.'])],
-            'message' => [new NotBlank(['message' => 'Message should not be blank.'])]
+            'message' => [new NotBlank(['message' => 'Message should not be blank.'])],
         ])]);
     }
 
@@ -52,5 +52,4 @@ class ContactType extends AbstractType
     {
         return 'contact';
     }
-
 }

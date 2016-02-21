@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Records
+ * Records.
  *
  * @ORM\Table(name="records", indexes={@ORM\Index(name="fk_technique", columns={"technique_id"}), @ORM\Index(name="fk_station_item", columns={"station_item_id"})})
  * @ORM\Entity(repositoryClass="AppBundle\Entity\RecordsRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Records
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -215,12 +215,10 @@ class Records
      */
     private $technique;
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -228,7 +226,7 @@ class Records
     }
 
     /**
-     * Set date
+     * Set date.
      *
      * @param \DateTime $date
      *
@@ -242,7 +240,7 @@ class Records
     }
 
     /**
-     * Get date
+     * Get date.
      *
      * @return \DateTime
      */
@@ -252,7 +250,7 @@ class Records
     }
 
     /**
-     * Set value00
+     * Set value00.
      *
      * @param string $value00
      *
@@ -266,7 +264,7 @@ class Records
     }
 
     /**
-     * Get value00
+     * Get value00.
      *
      * @return string
      */
@@ -276,7 +274,7 @@ class Records
     }
 
     /**
-     * Set value01
+     * Set value01.
      *
      * @param string $value01
      *
@@ -290,7 +288,7 @@ class Records
     }
 
     /**
-     * Get value01
+     * Get value01.
      *
      * @return string
      */
@@ -300,7 +298,7 @@ class Records
     }
 
     /**
-     * Set value02
+     * Set value02.
      *
      * @param string $value02
      *
@@ -314,7 +312,7 @@ class Records
     }
 
     /**
-     * Get value02
+     * Get value02.
      *
      * @return string
      */
@@ -324,7 +322,7 @@ class Records
     }
 
     /**
-     * Set value03
+     * Set value03.
      *
      * @param string $value03
      *
@@ -338,7 +336,7 @@ class Records
     }
 
     /**
-     * Get value03
+     * Get value03.
      *
      * @return string
      */
@@ -348,7 +346,7 @@ class Records
     }
 
     /**
-     * Set value04
+     * Set value04.
      *
      * @param string $value04
      *
@@ -362,7 +360,7 @@ class Records
     }
 
     /**
-     * Get value04
+     * Get value04.
      *
      * @return string
      */
@@ -372,7 +370,7 @@ class Records
     }
 
     /**
-     * Set value05
+     * Set value05.
      *
      * @param string $value05
      *
@@ -386,7 +384,7 @@ class Records
     }
 
     /**
-     * Get value05
+     * Get value05.
      *
      * @return string
      */
@@ -396,7 +394,7 @@ class Records
     }
 
     /**
-     * Set value06
+     * Set value06.
      *
      * @param string $value06
      *
@@ -410,7 +408,7 @@ class Records
     }
 
     /**
-     * Get value06
+     * Get value06.
      *
      * @return string
      */
@@ -420,7 +418,7 @@ class Records
     }
 
     /**
-     * Set value07
+     * Set value07.
      *
      * @param string $value07
      *
@@ -434,7 +432,7 @@ class Records
     }
 
     /**
-     * Get value07
+     * Get value07.
      *
      * @return string
      */
@@ -444,7 +442,7 @@ class Records
     }
 
     /**
-     * Set value08
+     * Set value08.
      *
      * @param string $value08
      *
@@ -458,7 +456,7 @@ class Records
     }
 
     /**
-     * Get value08
+     * Get value08.
      *
      * @return string
      */
@@ -468,7 +466,7 @@ class Records
     }
 
     /**
-     * Set value09
+     * Set value09.
      *
      * @param string $value09
      *
@@ -482,7 +480,7 @@ class Records
     }
 
     /**
-     * Get value09
+     * Get value09.
      *
      * @return string
      */
@@ -492,7 +490,7 @@ class Records
     }
 
     /**
-     * Set value10
+     * Set value10.
      *
      * @param string $value10
      *
@@ -506,7 +504,7 @@ class Records
     }
 
     /**
-     * Get value10
+     * Get value10.
      *
      * @return string
      */
@@ -516,7 +514,7 @@ class Records
     }
 
     /**
-     * Set value11
+     * Set value11.
      *
      * @param string $value11
      *
@@ -530,7 +528,7 @@ class Records
     }
 
     /**
-     * Get value11
+     * Get value11.
      *
      * @return string
      */
@@ -540,7 +538,7 @@ class Records
     }
 
     /**
-     * Set value12
+     * Set value12.
      *
      * @param string $value12
      *
@@ -554,7 +552,7 @@ class Records
     }
 
     /**
-     * Get value12
+     * Get value12.
      *
      * @return string
      */
@@ -564,7 +562,7 @@ class Records
     }
 
     /**
-     * Set value13
+     * Set value13.
      *
      * @param string $value13
      *
@@ -578,7 +576,7 @@ class Records
     }
 
     /**
-     * Get value13
+     * Get value13.
      *
      * @return string
      */
@@ -588,7 +586,7 @@ class Records
     }
 
     /**
-     * Set value14
+     * Set value14.
      *
      * @param string $value14
      *
@@ -602,7 +600,7 @@ class Records
     }
 
     /**
-     * Get value14
+     * Get value14.
      *
      * @return string
      */
@@ -612,7 +610,7 @@ class Records
     }
 
     /**
-     * Set value15
+     * Set value15.
      *
      * @param string $value15
      *
@@ -626,7 +624,7 @@ class Records
     }
 
     /**
-     * Get value15
+     * Get value15.
      *
      * @return string
      */
@@ -636,7 +634,7 @@ class Records
     }
 
     /**
-     * Set value16
+     * Set value16.
      *
      * @param string $value16
      *
@@ -650,7 +648,7 @@ class Records
     }
 
     /**
-     * Get value16
+     * Get value16.
      *
      * @return string
      */
@@ -660,7 +658,7 @@ class Records
     }
 
     /**
-     * Set value17
+     * Set value17.
      *
      * @param string $value17
      *
@@ -674,7 +672,7 @@ class Records
     }
 
     /**
-     * Get value17
+     * Get value17.
      *
      * @return string
      */
@@ -684,7 +682,7 @@ class Records
     }
 
     /**
-     * Set value18
+     * Set value18.
      *
      * @param string $value18
      *
@@ -698,7 +696,7 @@ class Records
     }
 
     /**
-     * Get value18
+     * Get value18.
      *
      * @return string
      */
@@ -708,7 +706,7 @@ class Records
     }
 
     /**
-     * Set value19
+     * Set value19.
      *
      * @param string $value19
      *
@@ -722,7 +720,7 @@ class Records
     }
 
     /**
-     * Get value19
+     * Get value19.
      *
      * @return string
      */
@@ -732,7 +730,7 @@ class Records
     }
 
     /**
-     * Set value20
+     * Set value20.
      *
      * @param string $value20
      *
@@ -746,7 +744,7 @@ class Records
     }
 
     /**
-     * Get value20
+     * Get value20.
      *
      * @return string
      */
@@ -756,7 +754,7 @@ class Records
     }
 
     /**
-     * Set value21
+     * Set value21.
      *
      * @param string $value21
      *
@@ -770,7 +768,7 @@ class Records
     }
 
     /**
-     * Get value21
+     * Get value21.
      *
      * @return string
      */
@@ -780,7 +778,7 @@ class Records
     }
 
     /**
-     * Set value22
+     * Set value22.
      *
      * @param string $value22
      *
@@ -794,7 +792,7 @@ class Records
     }
 
     /**
-     * Get value22
+     * Get value22.
      *
      * @return string
      */
@@ -804,7 +802,7 @@ class Records
     }
 
     /**
-     * Set value23
+     * Set value23.
      *
      * @param string $value23
      *
@@ -818,7 +816,7 @@ class Records
     }
 
     /**
-     * Get value23
+     * Get value23.
      *
      * @return string
      */
@@ -828,7 +826,7 @@ class Records
     }
 
     /**
-     * Set stationItem
+     * Set stationItem.
      *
      * @param \AppBundle\Entity\StationItem $stationItem
      *
@@ -842,7 +840,7 @@ class Records
     }
 
     /**
-     * Get stationItem
+     * Get stationItem.
      *
      * @return \AppBundle\Entity\StationItem
      */
@@ -852,7 +850,7 @@ class Records
     }
 
     /**
-     * Set technique
+     * Set technique.
      *
      * @param \AppBundle\Entity\Technique $technique
      *
@@ -866,7 +864,7 @@ class Records
     }
 
     /**
-     * Get technique
+     * Get technique.
      *
      * @return \AppBundle\Entity\Technique
      */

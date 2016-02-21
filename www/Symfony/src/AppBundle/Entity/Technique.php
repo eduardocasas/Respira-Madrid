@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Technique
+ * Technique.
  *
  * @ORM\Table(name="technique")
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Technique
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -35,12 +35,10 @@ class Technique
      */
     private $name;
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -48,7 +46,7 @@ class Technique
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -62,7 +60,7 @@ class Technique
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -72,7 +70,7 @@ class Technique
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -86,7 +84,7 @@ class Technique
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */

@@ -8,7 +8,6 @@ use AppBundle\Form\Type\ContactType;
 
 class DefaultController extends Controller
 {
-    
     public function submitAction(Request $request)
     {
         $form = $this->createForm(ContactType::class);
@@ -39,7 +38,7 @@ Mensaje:
 
         return $this->redirect($this->generateUrl('contact'));
     }
-    
+
     public function infoAction()
     {
         if (!$this->get('session')->has('email_sent')) {
@@ -49,13 +48,12 @@ Mensaje:
 
         return $this->render('contact/info.html.twig');
     }
-    
+
     public function indexAction()
     {
         return $this->render('contact/index.html.twig', [
             'section' => 'contact',
-            'form' => $this->createForm(ContactType::class)->createView()
+            'form' => $this->createForm(ContactType::class)->createView(),
         ]);
     }
-    
 }

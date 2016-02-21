@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Station
+ * Station.
  *
  * @ORM\Table(name="station")
  * @ORM\Entity
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Station
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -43,18 +43,16 @@ class Station
     private $address;
 
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="altitude", type="smallint", nullable=true)
      */
     private $altitude;
 
-
-
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -62,7 +60,7 @@ class Station
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -76,7 +74,7 @@ class Station
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -86,7 +84,7 @@ class Station
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -100,7 +98,7 @@ class Station
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -110,7 +108,7 @@ class Station
     }
 
     /**
-     * Set address
+     * Set address.
      *
      * @param string $address
      *
@@ -124,7 +122,7 @@ class Station
     }
 
     /**
-     * Get address
+     * Get address.
      *
      * @return string
      */
@@ -134,9 +132,9 @@ class Station
     }
 
     /**
-     * Set altitude
+     * Set altitude.
      *
-     * @param integer $altitude
+     * @param int $altitude
      *
      * @return Station
      */
@@ -148,9 +146,9 @@ class Station
     }
 
     /**
-     * Get altitude
+     * Get altitude.
      *
-     * @return integer
+     * @return int
      */
     public function getAltitude()
     {

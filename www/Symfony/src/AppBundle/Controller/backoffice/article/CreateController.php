@@ -10,11 +10,10 @@ use AppBundle\Form\Type\ArticleType;
 
 class CreateController extends Controller
 {
-
     public function submitAction(Request $request)
     {
-        $article = new Article;
-        $articleExtend = new ArticleExtend;
+        $article = new Article();
+        $articleExtend = new ArticleExtend();
         $article->setArticleExtend($articleExtend);
         $form = $this->createForm(ArticleType::class, $article);
         $form->handleRequest($request);
@@ -31,14 +30,14 @@ class CreateController extends Controller
 
         return ['entity' => $article, 'form' => $form->createView()];
     }
-    
+
     public function indexAction()
     {
-        $entity = new Article;
+        $entity = new Article();
         $form = $this->createForm(ArticleType::class, $entity);
 
         return $this->render('backoffice/article/create.html.twig', [
-            'entity' => $entity, 'form' => $form->createView()
+            'entity' => $entity, 'form' => $form->createView(),
         ]);
     }
 }

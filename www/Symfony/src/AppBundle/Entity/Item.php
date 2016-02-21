@@ -5,7 +5,7 @@ namespace AppBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Item
+ * Item.
  *
  * @ORM\Table(name="item")
  * @ORM\Entity(repositoryClass="AppBundle\Entity\ItemRepository")
@@ -13,7 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
 class Item
 {
     /**
-     * @var integer
+     * @var int
      *
      * @ORM\Column(name="id", type="integer", nullable=false)
      * @ORM\Id
@@ -50,9 +50,9 @@ class Item
     private $unit;
 
     /**
-     * Get id
+     * Get id.
      *
-     * @return integer
+     * @return int
      */
     public function getId()
     {
@@ -60,7 +60,7 @@ class Item
     }
 
     /**
-     * Set code
+     * Set code.
      *
      * @param string $code
      *
@@ -74,7 +74,7 @@ class Item
     }
 
     /**
-     * Get code
+     * Get code.
      *
      * @return string
      */
@@ -84,7 +84,7 @@ class Item
     }
 
     /**
-     * Set name
+     * Set name.
      *
      * @param string $name
      *
@@ -98,7 +98,7 @@ class Item
     }
 
     /**
-     * Get name
+     * Get name.
      *
      * @return string
      */
@@ -108,7 +108,7 @@ class Item
     }
 
     /**
-     * Set formula
+     * Set formula.
      *
      * @param string $formula
      *
@@ -122,7 +122,7 @@ class Item
     }
 
     /**
-     * Get formula
+     * Get formula.
      *
      * @return string
      */
@@ -130,9 +130,9 @@ class Item
     {
         return $this->formula;
     }
-    
+
     /**
-     * Set unit
+     * Set unit.
      *
      * @param string $unit
      *
@@ -146,7 +146,7 @@ class Item
     }
 
     /**
-     * Get unit
+     * Get unit.
      *
      * @return string
      */

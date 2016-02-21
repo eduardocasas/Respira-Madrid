@@ -9,10 +9,9 @@ use AppBundle\Form\Type\TagType;
 
 class CreateController extends Controller
 {
-
     public function submitAction(Request $request)
     {
-        $entity = new Tag;
+        $entity = new Tag();
         $form = $this->createForm(TagType::class, $entity);
         $form->handleRequest($request);
         if ($form->isValid()) {
@@ -23,16 +22,16 @@ class CreateController extends Controller
             return $this->redirect($this->generateUrl('backoffice_tag'));
         }
 
-        return ['entity' => $entity, 'form'   => $form->createView()];
+        return ['entity' => $entity, 'form' => $form->createView()];
     }
-    
+
     public function indexAction()
     {
-        $entity = new Tag;
+        $entity = new Tag();
         $form = $this->createForm(TagType::class, $entity);
 
         return $this->render('backoffice/tag/create.html.twig', [
-            'entity' => $entity, 'form' => $form->createView()
+            'entity' => $entity, 'form' => $form->createView(),
         ]);
     }
 }
