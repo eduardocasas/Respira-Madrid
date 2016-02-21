@@ -25,7 +25,7 @@ footer:
     author: 'Autor: <a href="url" target="_blank">Eduardo Casas</a>'
     cookies: Política de <a href="url" target="_blank">Cookies</a>
     github: Disponible en <a href="url" target="_blank">GitHub</a>
-    symfony: Creado con <a target="_blank" href="url" target="_blank">Symfony (2.7)</a>
+    symfony: Creado con <a target="_blank" href="url" target="_blank">Symfony (3)</a>
     license: 'Licencia: <a href="url" target="_blank">Creative Commons Attribution 3.0 Unported</a>'
 yes: Sí
 no: No
