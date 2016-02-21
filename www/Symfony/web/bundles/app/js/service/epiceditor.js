@@ -1,6 +1,6 @@
 var opts = {
     container: 'epiceditor',
-    textarea: 'article_form_article_extend_markdown',
+    textarea: 'article_article_extend_markdown',
     basePath: '',
     clientSideStorage: false,
     localStorageName: 'epiceditor',

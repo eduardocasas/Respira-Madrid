@@ -5,6 +5,7 @@ namespace AppBundle\Controller\home;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -27,11 +28,11 @@ class DefaultController extends Controller
         return $response->setContent($fileContent);
     }
 
-    public function printAction()
+    public function printAction(Request $request)
     {
-        $content = $this->renderView('home/index.html.twig', ['printFile' => true]+(($this->container->get('request')->get('_route') == 'home_print')
-            ? $this->getViewVars($this->getDefaultRecords())+$this->getDefaultViewVars()
-            : $this->getViewVars($this->getFilteredRecords())+$this->getFilteredViewVars()
+        $content = $this->renderView('home/index.html.twig', ['printFile' => true]+(($request->get('_route') == 'home_print')
+            ? $this->getViewVars($request, $this->getDefaultRecords())+$this->getDefaultViewVars()
+            : $this->getViewVars($request, $this->getFilteredRecords($request))+$this->getFilteredViewVars($request)
         ));
         $fileName = $this->getUnrepeatedRandomFileName();
         $this->createHtmlFile($fileName, $content);
@@ -43,40 +44,40 @@ class DefaultController extends Controller
         );
     }
     
-    public function filterAction()
+    public function filterAction(Request $request)
     {
-        $records = $this->getFilteredRecords();
+        $records = $this->getFilteredRecords($request);
 
-        return ($this->getRequest()->isXmlHttpRequest())
-            ? $this->render('home/records.html.twig', $this->getDateVars()+[
+        return ($request->isXmlHttpRequest())
+            ? $this->render('home/records.html.twig', $this->getDateVars($request)+[
                 'records' => $records,
                 'recordsForTable' => $this->getRecordsForTable($records),
-                'selectedStation' => $this->getRequest()->query->get('station'),
+                'selectedStation' => $request->query->get('station'),
                 'stationCollection' => $this->getStationCollection(),
                 'itemCollection' => $this->getDoctrine()->getRepository('AppBundle:Item')->getCollectionById(),
-                'selectedlast24Hours' => $this->getRequest()->query->has('last_24_hours'),
-                'siteTitle' => $this->getTitle()
+                'selectedlast24Hours' => $request->query->has('last_24_hours'),
+                'siteTitle' => $this->getTitle($request)
             ])
-            : $this->render('home/index.html.twig', $this->getViewVars($records)+$this->getFilteredViewVars()+[
+            : $this->render('home/index.html.twig', $this->getViewVars($request, $records)+$this->getFilteredViewVars($request)+[
                 'section' => 'home'
             ]);
     }
 
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        return $this->render('home/index.html.twig', $this->getViewVars($this->getDefaultRecords())+$this->getDefaultViewVars()+[
+        return $this->render('home/index.html.twig', $this->getViewVars($request, $this->getDefaultRecords())+$this->getDefaultViewVars()+[
             'section' => 'home'
         ]);
     }
     
-    private function getFilteredRecords()
+    private function getFilteredRecords($request)
     {
         return $this->getDoctrine()->getRepository('AppBundle:Records')->getCollection(
-            $this->getRequest()->query->get('station'),
-            $this->getRequest()->query->get('item', []),
-            $this->getStartDateTime(),
-            $this->getEndDateTime(),
-            $this->getRequest()->query->has('last_24_hours')
+            $request->query->get('station'),
+            $request->query->get('item', []),
+            $this->getStartDateTime($request),
+            $this->getEndDateTime($request),
+            $request->query->has('last_24_hours')
         );
     }
     
@@ -91,13 +92,13 @@ class DefaultController extends Controller
         );
     }
     
-    private function getFilteredViewVars()
+    private function getFilteredViewVars($request)
     {
         return [
-            'selectedStation' => $this->getRequest()->query->get('station'),
-            'selectedItemCollection' => $this->getRequest()->query->get('item', []),
-            'selectedlast24Hours' => $this->getRequest()->query->has('last_24_hours'),
-            'siteTitle' => $this->getTitle()
+            'selectedStation' => $request->query->get('station'),
+            'selectedItemCollection' => $request->query->get('item', []),
+            'selectedlast24Hours' => $request->query->has('last_24_hours'),
+            'siteTitle' => $this->getTitle($request)
         ];
     }
     
@@ -111,43 +112,43 @@ class DefaultController extends Controller
         ];
     }
     
-    private function getViewVars($records)
+    private function getViewVars($request, $records)
     {
         return [
             'records' => $records,
             'recordsForTable' => $this->getRecordsForTable($records),
             'stationCollection' => $this->getStationCollection(),
             'itemCollection' => $this->getItemCollection(),
-            'routeName' => $this->getRequest()->get('_route')
-        ]+$this->getDateVars();
+            'routeName' => $request->get('_route')
+        ]+$this->getDateVars($request);
     }    
     
-    private function getDateVars()
+    private function getDateVars($request)
     {
         return [
-            'startDate' => $this->getStartDateTime(),
-            'endDate' => $this->getEndDateTime()
+            'startDate' => $this->getStartDateTime($request),
+            'endDate' => $this->getEndDateTime($request)
         ];
     }
     
-    private function getStartDateTime()
+    private function getStartDateTime($request)
     {
-        if ($this->container->get('request')->get('_route') == 'home' || $this->getRequest()->query->has('last_24_hours')) {
+        if ($request->get('_route') == 'home' || $request->query->has('last_24_hours')) {
             return (new \DateTime)->sub(new \DateInterval('P1D'));
         } else {
-            return ($this->getRequest()->query->get('start_date')) 
-                ? \DateTime::createFromFormat('d-m-Y', $this->getRequest()->query->get('start_date'))
+            return ($request->query->get('start_date')) 
+                ? \DateTime::createFromFormat('d-m-Y', $request->query->get('start_date'))
                 : \DateTime::createFromFormat('d-m-Y', '08-10-2015');
         }
     }
     
-    private function getEndDateTime()
+    private function getEndDateTime($request)
     {
-        if ($this->container->get('request')->get('_route') == 'home' || $this->getRequest()->query->has('last_24_hours')) {
+        if ($request->get('_route') == 'home' || $request->query->has('last_24_hours')) {
             return new \DateTime;
         } else {
-            return ($this->getRequest()->query->get('end_date')) 
-                ? \DateTime::createFromFormat('d-m-Y', $this->getRequest()->query->get('end_date'))
+            return ($request->query->get('end_date')) 
+                ? \DateTime::createFromFormat('d-m-Y', $request->query->get('end_date'))
                 : new \DateTime;
         }
     }
@@ -166,21 +167,21 @@ class DefaultController extends Controller
         return $collection;
     }
     
-    private function getTitle()
+    private function getTitle($request)
     {
         $siteTitle = $this->get('translator')->trans('home.filter_title.main').'. ';
-        $siteTitle .= $this->getStationCollection()[$this->getRequest()->query->get('station')]->getName().'. ';        
-        if ($this->getRequest()->query->has('last_24_hours')) {
+        $siteTitle .= $this->getStationCollection()[$request->query->get('station')]->getName().'. ';        
+        if ($request->query->has('last_24_hours')) {
             $siteTitle .= $this->get('translator')->trans('home.filter_title.24hours').'. ';
-        } elseif ($this->getRequest()->query->get('start_date') && $this->getRequest()->query->get('end_date')) {
-            $siteTitle .= $this->getRequest()->query->get('start_date').' - '.$this->getRequest()->query->get('end_date').'. ';
-        } elseif ($this->getRequest()->query->get('start_date')) {
-            $siteTitle .= $this->get('translator')->trans('home.filter_title.from').' '.$this->getRequest()->query->get('start_date').'. ';
-        } elseif ($this->getRequest()->query->get('end_date')) {
-            $siteTitle .= $this->get('translator')->trans('home.filter_title.to').' '.$this->getRequest()->query->get('end_date').'. ';
+        } elseif ($request->query->get('start_date') && $request->query->get('end_date')) {
+            $siteTitle .= $request->query->get('start_date').' - '.$request->query->get('end_date').'. ';
+        } elseif ($request->query->get('start_date')) {
+            $siteTitle .= $this->get('translator')->trans('home.filter_title.from').' '.$request->query->get('start_date').'. ';
+        } elseif ($request->query->get('end_date')) {
+            $siteTitle .= $this->get('translator')->trans('home.filter_title.to').' '.$request->query->get('end_date').'. ';
         }
         $itemCollection = [];
-        foreach ($this->getRequest()->query->get('item', []) as $itemId) {
+        foreach ($request->query->get('item', []) as $itemId) {
             $itemCollection[] = $this->getItemCollection()[$itemId]->getName();
         }
         $siteTitle .= implode(', ', $itemCollection).'.';

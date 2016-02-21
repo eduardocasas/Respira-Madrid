@@ -11,7 +11,7 @@ class DefaultController extends Controller
     
     public function submitAction(Request $request)
     {
-        $form = $this->createForm(new ContactType);
+        $form = $this->createForm(ContactType::class);
         $form->handleRequest($request);
         if ($form->isValid()) {
             $data = $form->getData();
@@ -54,7 +54,7 @@ Mensaje:
     {
         return $this->render('contact/index.html.twig', [
             'section' => 'contact',
-            'form' => $this->createForm(new ContactType)->createView()
+            'form' => $this->createForm(ContactType::class)->createView()
         ]);
     }
     

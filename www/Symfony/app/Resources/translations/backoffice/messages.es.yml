@@ -2,6 +2,15 @@ backoffice:
     article:
         create: Crear Artículo
         delete: ¿Quieres eliminar este artículo?
+        form:
+            active: "Activo:"
+            alt: "Alt:"
+            content: "Contenido:"
+            language: "Idioma:"
+            name: "Nombre:"
+            picture: "Imagen:"
+            slug: "Slug:"
+            summary: "Resumen:"
         name: Artículos
         title: Lista de Artículos
         item:
@@ -11,9 +20,10 @@ backoffice:
         login:
             title: Inciar Sesión
     tag:
+        create: Crear Etiqueta
         delete: ¿Quieres eliminar esta etiqueta?
         name: Tags
         title: Lista de Tags
         item:
             name: Nombre
-            slug: Slug
+            slug: Slug        

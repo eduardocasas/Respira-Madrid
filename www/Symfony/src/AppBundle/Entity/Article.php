@@ -16,7 +16,7 @@ class Article
     
     const SPANISH_LANGUAGE = 1;
     const ENGLISH_LANGUAGE = 2;
-    const BOTH_LANGUAGE    = 3;
+    const BOTH_LANGUAGE = 3;
     
     /**
      * @var integer

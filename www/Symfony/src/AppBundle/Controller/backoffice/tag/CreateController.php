@@ -3,17 +3,18 @@
 namespace AppBundle\Controller\backoffice\tag;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Entity\Tag;
 use AppBundle\Form\Type\TagType;
 
 class CreateController extends Controller
 {
 
-    public function submitAction()
+    public function submitAction(Request $request)
     {
         $entity = new Tag;
-        $form = $this->createForm(new TagType, $entity);
-        $form->bind($this->getRequest());
+        $form = $this->createForm(TagType::class, $entity);
+        $form->handleRequest($request);
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->persist($entity);
@@ -28,7 +29,7 @@ class CreateController extends Controller
     public function indexAction()
     {
         $entity = new Tag;
-        $form = $this->createForm(new TagType, $entity);
+        $form = $this->createForm(TagType::class, $entity);
 
         return $this->render('backoffice/tag/create.html.twig', [
             'entity' => $entity, 'form' => $form->createView()

@@ -4,6 +4,7 @@ namespace AppBundle\Controller\backoffice\tag;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\TagType;
 
 class UpdateController extends Controller
@@ -18,15 +19,15 @@ class UpdateController extends Controller
         return new Response($this->generateUrl('backoffice_tag'));
     }
 
-    public function submitAction($tagId)
+    public function submitAction(Request $request, $tagId)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('AppBundle:Tag')->find($tagId);
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $editForm = $this->createForm(new TagType, $entity);
-        $editForm->bind($this->getRequest());
+        $editForm = $this->createForm(TagType::class, $entity);
+        $editForm->handleRequest($request);
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
@@ -47,7 +48,7 @@ class UpdateController extends Controller
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $form = $this->createForm(new TagType, $entity);
+        $form = $this->createForm(TagType::class, $entity);
 
         return $this->render('backoffice/tag/update.html.twig', [
             'tag' => $entity,

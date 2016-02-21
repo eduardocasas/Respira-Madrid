@@ -4,6 +4,7 @@ namespace AppBundle\Controller\backoffice\article;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Request;
 use AppBundle\Form\Type\ArticleType;
 
 class UpdateController extends Controller
@@ -18,15 +19,15 @@ class UpdateController extends Controller
         return new Response($this->generateUrl('backoffice_article'));
     }
     
-    public function submitAction($articleId)
+    public function submitAction(Request $request, $articleId)
     {
         $em = $this->getDoctrine()->getManager();
         $entity = $em->getRepository('AppBundle:Article')->find($articleId);
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $editForm = $this->createForm(new ArticleType, $entity);
-        $editForm->bind($this->getRequest());
+        $editForm = $this->createForm(ArticleType::class, $entity);
+        $editForm->handleRequest($request);
         if ($editForm->isValid()) {
             $em->persist($entity);
             $em->flush();
@@ -46,7 +47,7 @@ class UpdateController extends Controller
         if (!$article) {
             throw $this->createNotFoundException('Unable to find Users entity.');
         }
-        $form = $this->createForm(new ArticleType, $article);
+        $form = $this->createForm(ArticleType::class, $article);
 
         return $this->render('backoffice/article/update.html.twig', [
             'article' => $article,
