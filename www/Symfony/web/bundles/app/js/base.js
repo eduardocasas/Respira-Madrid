@@ -22,27 +22,27 @@ $.fn.serializeObject = function() {
 /* -------------- Loading Header Indicators -------------- */
 
 Loading = function() {
-    this.element;
-    this.saved_message;
-    this.error_message;
+    this.element = null;
+    this.saved_message = null;
+    this.error_message = null;
     var warning;
     var that = this;
     this.start = function(item) {
         this.removeErrorMessage();
         this.saved_message.css('display', 'none');
         this.element.css('display', 'block');
-        if (item != undefined) {
+        if (item !== undefined) {
             item.prop('disabled', true);
         }
         return this;
-    }
+    };
     this.stop = function(item, text) {
         clearTimeout(warning);
         this.element.css('display', 'none');
-        if (item != undefined) {
+        if (item !== undefined) {
             item.prop('disabled', false);
         }
-        if (text != undefined) {
+        if (text !== undefined) {
             clearSavedDataMessage();
             if (typeof text == 'boolean') {
                 text = saved_data_text;
@@ -50,7 +50,7 @@ Loading = function() {
             this.saved_message.text(text).css('display', 'block').hide().fadeIn();
         }
         return this;
-    }
+    };
     this.displayErrorMessage = function(message_collection) {
         if( typeof message_collection === 'string' ) {
             message_collection = [message_collection];
@@ -74,17 +74,17 @@ Loading = function() {
         }
         this.error_message.css({'display': 'block', 'margin-top': margin_top}).hide().fadeIn();
         return this;
-    }
+    };
     this.removeErrorMessage = function() {
         this.error_message.html('').css('display', 'none');
         return this;
-    }
+    };
     clearSavedDataMessage = function() {
         warning = setTimeout(
-            function() { that.saved_message.fadeOut() },
+            function() { that.saved_message.fadeOut(); },
             1000*3
         );
-    }
+    };
 };
 
 var Loading = new Loading();

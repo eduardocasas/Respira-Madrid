@@ -189,7 +189,7 @@ $(document).ready(function() {
     /* ------ Print ------ */
     
     $('#print_button').click(function(event) {
-        event.preventDefault;
+        event.preventDefault();
         Loading.start($(this));
         $.post(window.location.href).done(function(res) {
             Loading.stop($('#print_button'));

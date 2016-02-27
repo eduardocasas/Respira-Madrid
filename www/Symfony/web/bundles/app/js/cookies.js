@@ -18,7 +18,7 @@ CookieObject = function() {
             while (c.charAt(0)==' ') {
                 c = c.substring(1,c.length);
             }
-            if (c.indexOf(nameEQ) == 0) {
+            if (c.indexOf(nameEQ) === 0) {
                 return c.substring(nameEQ.length,c.length);
             }
         }
@@ -27,7 +27,7 @@ CookieObject = function() {
 };
 $(document).ready(function() {
 
-    var Cookie = new CookieObject;
+    var Cookie = new CookieObject();
     $('#lssi_wrapper').show();
     $('#logo').css('margin-bottom', $('#cookies_footer_wrapper').css('height'));
     $('#footer').css('bottom', $('#cookies_footer_wrapper').outerHeight());

@@ -33,8 +33,8 @@ var opts = {
         toggleFullscreen: epicEditor.toggleFullscreen
     },
     autogrow: false
-}
+};
 
 var editor;
 
-$(document).ready(function() { editor = new EpicEditor(opts).load() });
+$(document).ready(function() { editor = new EpicEditor(opts).load(); });
