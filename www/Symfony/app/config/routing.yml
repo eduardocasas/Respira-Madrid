@@ -1,90 +1,90 @@
 home_print:
     path:      /
-    defaults:  { _controller: AppBundle:home\Default:print }    
+    defaults:  { _controller: AppBundle:Home\Default:print }    
     methods: [POST]
 home_print_filter:
     path:      /filter
-    defaults:  { _controller: AppBundle:home\Default:print }    
+    defaults:  { _controller: AppBundle:Home\Default:print }    
     methods: [POST]
 home:
     path:      /
-    defaults:  { _controller: AppBundle:home\Default:index }
+    defaults:  { _controller: AppBundle:Home\Default:index }
 home_get_records:
     path:      /filter
-    defaults:  { _controller: AppBundle:home\Default:filter }
+    defaults:  { _controller: AppBundle:Home\Default:filter }
     methods: [GET]
 home_print_get_file:
     path:      /file/{fileName}
-    defaults:  { _controller: AppBundle:home\Default:getFile }
+    defaults:  { _controller: AppBundle:Home\Default:getFile }
 blog:
     path:      /blog
-    defaults:  { _controller: AppBundle:blog\Default:index }
+    defaults:  { _controller: AppBundle:Blog\Default:index }
 blog_rss:
     path:      /blog/rss.xml
-    defaults:  { _controller: AppBundle:blog\Rss:index }
+    defaults:  { _controller: AppBundle:Blog\Rss:index }
 blog_tag_rss:
     path:      /blog/{tagSlug}/rss.xml
-    defaults:  { _controller: AppBundle:blog\Rss:indexByTag }
+    defaults:  { _controller: AppBundle:Blog\Rss:indexByTag }
 blog_tag:
     path:      /blog/{tagSlug}
-    defaults:  { _controller: AppBundle:blog\Default:indexByTag }
+    defaults:  { _controller: AppBundle:Blog\Default:indexByTag }
 blog_article:
     path:      /blog/article/{date}/{slug}
-    defaults:  { _controller: AppBundle:blog\Default:article }
+    defaults:  { _controller: AppBundle:Blog\Default:article }
 contact:
     path:      /contact
-    defaults:  { _controller: AppBundle:contact\Default:index }
+    defaults:  { _controller: AppBundle:Contact\Default:index }
 contact_submit:
     path:      /contact/submit
-    defaults:  { _controller: AppBundle:contact\Default:submit }
+    defaults:  { _controller: AppBundle:Contact\Default:submit }
 contact_info:
     path:      /contact/info
-    defaults:  { _controller: AppBundle:contact\Default:info }
+    defaults:  { _controller: AppBundle:Contact\Default:info }
 cookies:
     path:      /cookies
-    defaults:  { _controller: AppBundle:cookies\Default:index }
+    defaults:  { _controller: AppBundle:Cookies\Default:index }
 sitemap:
     path:      /sitemap.xml
     defaults:  { _controller: AppBundle:Sitemap:index }
 backoffice_article:
     path:     /backoffice/articles
-    defaults: { _controller: AppBundle:backoffice\article\Default:index }
+    defaults: { _controller: AppBundle:Backoffice\Article\Default:index }
 backoffice_article_create:
     path:     /backoffice/articles/create
-    defaults: { _controller: AppBundle:backoffice\article\Create:index }
+    defaults: { _controller: AppBundle:Backoffice\Article\Create:index }
 backoffice_article_create_submit:
     path:     /backoffice/articles/create/submit
-    defaults: { _controller: AppBundle:backoffice\article\Create:submit }
+    defaults: { _controller: AppBundle:Backoffice\Article\Create:submit }
 backoffice_article_delete:
     path:     /backoffice/articles/{articleId}/delete
-    defaults: { _controller: AppBundle:backoffice\article\Update:delete }
+    defaults: { _controller: AppBundle:Backoffice\Article\Update:delete }
 backoffice_article_update:
     path:     /backoffice/articles/{articleId}
-    defaults: { _controller: AppBundle:backoffice\article\Update:index }
+    defaults: { _controller: AppBundle:Backoffice\Article\Update:index }
 backoffice_article_update_submit:
     path:     /backoffice/articles/{articleId}/submit
-    defaults: { _controller: AppBundle:backoffice\article\Update:submit }
+    defaults: { _controller: AppBundle:Backoffice\Article\Update:submit }
 backoffice_tag:
     path:     /backoffice/tags
-    defaults: { _controller: AppBundle:backoffice\tag\Default:index }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Default:index }
 backoffice_tag_create:
     path:     /backoffice/tags/create
-    defaults: { _controller: AppBundle:backoffice\tag\Create:index }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Create:index }
 backoffice_tag_create_submit:
     path:     /backoffice/tags/create/submit
-    defaults: { _controller: AppBundle:backoffice\tag\Create:submit }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Create:submit }
 backoffice_tag_delete:
     path:     /backoffice/tags/{tagId}/delete
-    defaults: { _controller: AppBundle:backoffice\tag\Update:delete }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Update:delete }
 backoffice_tag_update:
     path:     /backoffice/tags/{tagId}
-    defaults: { _controller: AppBundle:backoffice\tag\Update:index }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Update:index }
 backoffice_tag_update_submit:
     path:     /backoffice/tags/{tagId}/submit
-    defaults: { _controller: AppBundle:backoffice\tag\Update:submit }
+    defaults: { _controller: AppBundle:Backoffice\Tag\Update:submit }
 backoffice_login:
     path:     /backoffice/login
-    defaults: { _controller: AppBundle:backoffice\Security:login }
+    defaults: { _controller: AppBundle:Backoffice\Security:login }
 backoffice_login_check:
     path: /backoffice/login_check
 backoffice_logout:

@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\home;
+namespace AppBundle\Controller\Home;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;

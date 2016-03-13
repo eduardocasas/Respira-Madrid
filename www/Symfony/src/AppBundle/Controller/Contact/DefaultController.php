@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\contact;
+namespace AppBundle\Controller\Contact;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;

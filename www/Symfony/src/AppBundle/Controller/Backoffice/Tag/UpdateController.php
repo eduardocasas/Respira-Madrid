@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\backoffice\tag;
+namespace AppBundle\Controller\Backoffice\Tag;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;

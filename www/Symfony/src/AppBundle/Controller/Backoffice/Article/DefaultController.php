@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\backoffice\article;
+namespace AppBundle\Controller\Backoffice\Article;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 

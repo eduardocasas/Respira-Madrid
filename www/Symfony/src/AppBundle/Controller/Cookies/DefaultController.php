@@ -1,6 +1,6 @@
 <?php
 
-namespace AppBundle\Controller\cookies;
+namespace AppBundle\Controller\Cookies;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
