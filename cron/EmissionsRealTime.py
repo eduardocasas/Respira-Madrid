@@ -92,3 +92,9 @@ for line in collection:
         hour += 1
     cur.execute("INSERT INTO records ("+fields+") VALUES ("+fields_index+")", values)
 con.commit()
+
+# Insert average records into database
+cur.execute('SET @date = \''+date+'\'')
+for line in open('InsertAverageRecords.sql'):
+    cur.execute(line)
+con.commit()
